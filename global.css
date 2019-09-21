@@ -1,0 +1,109 @@
+:root {
+    --wraith-white:     #FFFFFF;
+    --ash-grey:         #D7D7D7;
+    --smoke-grey:       #ACACAC;
+    --slate-grey:       #636363;
+    --dark-grey:        #3C3C3C;
+    --shadow-black:     #191919;
+
+    --flesh-red-0:      #C9A2A2;
+    --flesh-red-1:      #C06F6F;
+    --volcanic-red:     #FF0000;
+    --blood-red-0:      #B60000;
+    --blood-red-1:      #850000;
+    --blood-red-2:      #520000;
+    
+    --dust-yellow:      #FFDE43;
+    --sand-yellow:      #FFBC2C;
+    --amber-yellow:     #FFA800;
+    --citrus-orange:    #FFA800;
+    --burnt-orange:     #FFA800;
+    --dirt-orange:      #B05F00;
+
+    --ash-blue:         #A4A7C4;
+    --smoke-blue:       #858BBC;
+    --volcanic-blue:    #565C94;
+    --dark-blue:        #3C416E;
+    --night-blue:       #2A2C3F;
+    --shadow-blue:      #1C1D25;
+
+    --font-xsmall:      10px;
+    --font-small:       12px;
+
+    background: linear-gradient(90deg, var(--shadow-blue), var(--night-blue), var(--shadow-blue));
+}
+
+hr {
+    border-color: var(--dark-blue);
+}
+
+header li, nav li {
+    list-style-type: none;
+    display: inline-flex;
+}
+
+header li {
+    margin: 0 15px;
+}
+
+nav li {
+    margin: 0 45px;
+    display: inline-block;
+}
+
+header .right, nav .right {
+    float: right;
+}
+
+.header {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: var(--font-small);
+    color: var(--volcanic-blue);
+    margin: 0;
+    padding: 0 40px;
+}
+
+.nav {
+    margin: 0;
+    padding: 0 50px;
+}
+
+.nav-selection {
+    height: 40px;
+}
+
+.social-media {
+    color: var(--amber-yellow);
+    list-style-type: none;
+    display: inline-flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-small);
+    margin: 0 0 10px;
+    padding: 0;
+    position: relative;
+    right: 19%;
+    left: 19%;
+}
+
+.social-media li {
+    margin: 0 30px;
+}
+
+#home-banner {
+    width: 100%;
+    margin-top: 5px;
+}
+
+#social-media {
+    display: flex;
+    margin: auto;
+    width: 50%;
+}
+
+#copyright {
+    color: var(--dust-yellow);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-xsmall);
+    text-align: center;
+}
