@@ -16,8 +16,8 @@
     --dust-yellow:      #FFDE43;
     --sand-yellow:      #FFBC2C;
     --amber-yellow:     #FFA800;
-    --citrus-orange:    #FFA800;
-    --burnt-orange:     #FFA800;
+    --citrus-orange:    #FF8A00;
+    --burnt-orange:     #D97500;
     --dirt-orange:      #B05F00;
 
     --ash-blue:         #A4A7C4;
@@ -37,7 +37,7 @@
     background: var(--background);
 }
 
-header a {
+a {
     color: inherit;
     text-decoration: none;
 }
@@ -56,6 +56,10 @@ h1 {
     color: var(--volcanic-blue);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-transform: uppercase;
+}
+
+h1.center {
+    text-align: center;
 }
 
 #header-nav {
@@ -85,6 +89,37 @@ header .right, nav .right {
 
 header .left, nav .left {
     float: left;
+}
+
+label {
+    color: var(--wraith-white);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-small);
+}
+
+input {
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0;
+}
+
+input[type=text] {
+    border: 2px solid var(--smoke-blue);
+    background: var(--ash-blue);
+}
+
+input[type=submit] {
+    border: 2px solid var(--citrus-orange);
+    background: var(--amber-yellow);
+    color: var(--shadow-black);
+    padding: 5px 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input[type=submit]:hover {
+    border: 2px solid var(--amber-yellow);
+    background: var(--citrus-orange);
 }
 
 .header {
@@ -155,6 +190,36 @@ header .left, nav .left {
     text-transform: uppercase;
 }
 
+.form1 {
+    background: var(--volcanic-blue);
+    border-radius: 5px;
+    border: 2px solid var(--dark-blue);
+}
+
+.registration-link {
+    color: var(--flesh-red-1);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-xsmall);
+    margin-top: 10px;
+}
+
+.registration-link > a:hover {
+    color: var(--flesh-red-0);
+}
+
+.col2-left {
+    float: left;
+    width: 45%;
+    margin: 10px 5px 10px 15px;
+}
+
+.col2-right {
+    float: right;
+    width: 45%;
+    margin: 10px 15px 10px 5px;
+}
+
 #logo {
     position: relative;
     left: 2%;
@@ -169,4 +234,40 @@ header .left, nav .left {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: var(--font-xsmall);
     text-align: center;
+}
+
+#log-in {
+    width: 350px;
+    margin: 0 auto;
+}
+
+#log-in-fields {
+    display: inline-block;
+    margin: 0 20px;
+    width: 65%;
+    padding: 15px 0;
+    position: relative;
+}
+
+#log-in-submit {
+    display: inline-block;
+}
+
+#log-in-page {
+    margin: 10vh 0 30vh;
+}
+
+#sign-up {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#sign-up-submit {
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+#sign-up-page {
+    margin: 10vh 0 23vh;
 }
