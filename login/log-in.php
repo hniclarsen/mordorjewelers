@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="global.css"/>
+        <link rel="stylesheet" type="text/css" href="/login/login.css"/>
     </head>
     <body>
-        <?php require_once "./header-nav.html" ?>
+        <?php require_once "../header-nav.html" ?>
         <div id="log-in-page">
             <h1 class="center">Log In</h1>
             <div class="form1" id="log-in">
@@ -18,10 +18,10 @@
                     <input type="submit" value="Log In"/>
                 </div>
             </div>
-            <div class="registration-link"><a href="sign-up.php">
+            <div class="registration-link"><a href="/signup/sign-up.php">
                 Don't have an account? Sign up here.
             </a></div>
         </div>
-        <?php require_once "./footer.html" ?>
+        <?php require_once "../footer.html" ?>
     </body>
 </html>

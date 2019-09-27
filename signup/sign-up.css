@@ -1,0 +1,16 @@
+@import "/global.css";
+
+#sign-up {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#sign-up-submit {
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+#sign-up-page {
+    margin: 10vh 0;
+}

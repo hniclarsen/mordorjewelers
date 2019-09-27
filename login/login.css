@@ -1,0 +1,22 @@
+@import "/global.css";
+
+#log-in {
+    width: 350px;
+    margin: 0 auto;
+}
+
+#log-in-fields {
+    display: inline-block;
+    margin: 0 20px;
+    width: 65%;
+    padding: 15px 0;
+    position: relative;
+}
+
+#log-in-submit {
+    display: inline-block;
+}
+
+#log-in-page {
+    margin: 10vh 0;
+}

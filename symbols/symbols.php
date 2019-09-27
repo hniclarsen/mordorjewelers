@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="global.css"/>
+        <link rel="stylesheet" type="text/css" href="./symbols.css"/>
     </head>
     <body>
-        <?php require_once "./header-nav.html" ?>
+        <?php require_once "../header-nav.html" ?>
         <div class="center" id="symbols-page">
             <h1 class="center">Symbols</h1>
             <div>
@@ -83,6 +83,6 @@
                 </div>
             </div>
         </div>
-        <?php require_once "./footer.html" ?>
+        <?php require_once "../footer.html" ?>
     </body>
 </html>

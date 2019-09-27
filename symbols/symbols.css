@@ -1,0 +1,26 @@
+@import "/global.css";
+
+.symbol-item {
+    height: 350px;
+    width: 350px;
+    margin: 50px 75px;
+    display: inline-block;
+}
+
+.symbol-img {
+    height: 350px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.symbol-name {
+    font-size: var(--font-large);
+}
+
+.symbol-description {
+    text-transform: none;
+    font-size: var(--font-medium);
+}
+#symbols-page {
+    margin: 5vh auto;
+}
