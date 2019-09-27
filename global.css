@@ -30,6 +30,7 @@
     --font-xsmall:      10px;
     --font-small:       12px;
     --font-medium:      15px;
+    --font-large:       18px;
 
     --background: linear-gradient(90deg, var(--shadow-black), var(--shadow-blue) 10%, 
                     var(--night-blue), var(--shadow-blue) 90%, var(--shadow-black));
@@ -82,6 +83,11 @@ header li {
 
 nav li {
     margin: 0 40px;
+}
+
+nav .left li a:hover, nav .right li a:hover {
+    box-shadow: 0 2px 3px var(--amber-yellow);
+    border-radius: 50%;
 }
 
 header .right, nav .right {
@@ -166,6 +172,28 @@ input[type=submit]:hover {
     width: 200px;
     margin: 15px 30px;
     display: inline-block;
+}
+
+.symbol-item {
+    height: 350px;
+    width: 350px;
+    margin: 50px 75px;
+    display: inline-block;
+}
+
+.symbol-img {
+    height: 350px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.symbol-name {
+    font-size: var(--font-large);
+}
+
+.symbol-description {
+    text-transform: none;
+    font-size: var(--font-medium);
 }
 
 .featured-item .item-name {
@@ -273,4 +301,8 @@ input[type=submit]:hover {
 
 #sign-up-page {
     margin: 10vh 0;
+}
+
+#symbols-page {
+    margin: 5vh auto;
 }
