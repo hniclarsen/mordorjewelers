@@ -6,7 +6,7 @@
     <body>
         <?php require_once "./header-nav.html" ?>
         <img id="home-banner" src="img/home_banner.png"/>
-        <div>
+        <div class="center">
             <div class="featured-item">
                 <img class="round-img"/>
                 <div class="item-text">

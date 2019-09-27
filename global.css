@@ -60,6 +60,7 @@ h1 {
 
 h1.center {
     text-align: center;
+    margin: 10px auto;
 }
 
 #header-nav {
@@ -111,15 +112,18 @@ input[type=text] {
 
 input[type=submit] {
     border: 2px solid var(--citrus-orange);
-    background: var(--amber-yellow);
+    background: linear-gradient(var(--citrus-orange) 10%, 
+                var(--sand-yellow), var(--citrus-orange) 90%);
     color: var(--shadow-black);
     padding: 5px 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
 }
 
 input[type=submit]:hover {
     border: 2px solid var(--amber-yellow);
-    background: var(--citrus-orange);
+    background: linear-gradient(var(--burnt-orange) 10%, 
+                var(--amber-yellow), var(--burnt-orange) 90%);
 }
 
 .header {
@@ -149,21 +153,19 @@ input[type=submit]:hover {
     margin: 0 auto 10px;
     padding: 0;
     position: relative;
-    left: 35%;
     width: 50%;
+    text-align: center;
 }
 
 .social-media li {
-    margin: 0 5%;
+    margin: 0 20px;
 }   
 
 .featured-item {
-    float: left;
     height: 250px;
     width: 200px;
     margin: 15px 30px;
-    position: relative;
-    left: 8%;
+    display: inline-block;
 }
 
 .featured-item .item-name {
@@ -191,7 +193,8 @@ input[type=submit]:hover {
 }
 
 .form1 {
-    background: var(--volcanic-blue);
+    background: linear-gradient(90deg, var(--dark-blue) 10%, 
+                var(--volcanic-blue), var(--dark-blue) 90%);
     border-radius: 5px;
     border: 2px solid var(--dark-blue);
 }
@@ -220,9 +223,9 @@ input[type=submit]:hover {
     margin: 10px 15px 10px 5px;
 }
 
-#logo {
-    position: relative;
-    left: 2%;
+.center {
+    margin: 0 auto;
+    width: fit-content;
 }
 
 #home-banner {
@@ -254,7 +257,7 @@ input[type=submit]:hover {
 }
 
 #log-in-page {
-    margin: 10vh 0 30vh;
+    margin: 10vh 0;
 }
 
 #sign-up {
@@ -269,5 +272,5 @@ input[type=submit]:hover {
 }
 
 #sign-up-page {
-    margin: 10vh 0 23vh;
+    margin: 10vh 0;
 }
