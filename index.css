@@ -1,0 +1,21 @@
+@import "/global.css";
+
+.featured-item {
+    height: 250px;
+    width: 200px;
+    margin: 15px 30px;
+    display: inline-block;
+}
+
+.featured-item .item-name {
+    font-size: var(--font-medium);
+}
+
+.featured-item .item-price {
+    font-size: var(--font-small);
+}
+
+#home-banner {
+    width: 100%;
+    box-shadow: 0 5px 10px var(--shadow-blue);
+}

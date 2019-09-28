@@ -85,16 +85,16 @@ nav li {
     margin: 0 40px;
 }
 
-nav .left li a:hover, nav .right li a:hover {
+.ring-link a:hover {
     box-shadow: 0 2px 3px var(--amber-yellow);
     border-radius: 50%;
 }
 
-header .right, nav .right {
+header .right {
     float: right;
 }
 
-header .left, nav .left {
+header .left {
     float: left;
 }
 
@@ -165,21 +165,6 @@ input[type=submit]:hover {
 
 .social-media li {
     margin: 0 20px;
-}   
-
-.featured-item {
-    height: 250px;
-    width: 200px;
-    margin: 15px 30px;
-    display: inline-block;
-}
-
-.featured-item .item-name {
-    font-size: var(--font-medium);
-}
-
-.featured-item .item-price {
-    font-size: var(--font-small);
 }
 
 .round-img {
@@ -205,7 +190,7 @@ input[type=submit]:hover {
     border: 2px solid var(--dark-blue);
 }
 
-.registration-link {
+.text-link {
     color: var(--flesh-red-1);
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -213,20 +198,8 @@ input[type=submit]:hover {
     margin-top: 10px;
 }
 
-.registration-link > a:hover {
+.text-link > a:hover {
     color: var(--flesh-red-0);
-}
-
-.col2-left {
-    float: left;
-    width: 45%;
-    margin: 10px 5px 10px 15px;
-}
-
-.col2-right {
-    float: right;
-    width: 45%;
-    margin: 10px 15px 10px 5px;
 }
 
 .center {
@@ -234,8 +207,10 @@ input[type=submit]:hover {
     width: fit-content;
 }
 
-#home-banner {
-    width: 100%;
+.descriptive-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--wraith-white);
+    font-size: var(--font-medium);
 }
 
 #copyright {

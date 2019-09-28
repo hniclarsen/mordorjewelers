@@ -1,0 +1,25 @@
+@import "/global.css";
+
+#philosophy-hero {
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 5px 10px var(--shadow-blue);
+}
+
+#philosophy-page {
+    width: 75%;
+    position: relative;
+    margin: 0 auto 5vh;
+}
+
+#philosophy-text {
+    display: inline-block;
+    width: 50%;
+}
+
+#philosophy-img {
+    float: right;
+    width: 40%;
+    box-shadow: 0 0 10px var(--amber-yellow);
+    border-radius: 50%;
+}

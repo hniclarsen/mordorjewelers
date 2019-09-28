@@ -18,7 +18,7 @@
                     <input type="submit" value="Log In"/>
                 </div>
             </div>
-            <div class="registration-link"><a href="/signup/sign-up.php">
+            <div class="text-link"><a href="/signup/sign-up.php">
                 Don't have an account? Sign up here.
             </a></div>
         </div>
