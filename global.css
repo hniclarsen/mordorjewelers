@@ -132,6 +132,24 @@ input[type=submit]:hover {
                 var(--amber-yellow), var(--burnt-orange) 90%);
 }
 
+input[type=button] {
+    width: fit-content;
+    text-transform: uppercase;
+    border: 2px solid var(--dark-blue);
+    background: linear-gradient(var(--dark-blue), var(--volcanic-blue), var(--dark-blue));
+    color: var(--ash-blue);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input[type=button]:hover {
+    width: fit-content;
+    text-transform: uppercase;
+    border: 2px solid var(--volcanic-blue);
+    background: linear-gradient(var(--volcanic-blue), var(--dark-blue), var(--volcanic-blue));
+    color: var(--ash-blue);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;

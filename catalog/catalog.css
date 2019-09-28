@@ -1,0 +1,24 @@
+@import "/global.css";
+
+h1 {
+    display: inline-block;
+}
+
+#catalog-toolbar {
+    width: 675px;
+    margin: 0 auto;
+}
+
+#searchbar {
+    display: inline-block;
+    width: 200px;
+    margin: 0 15%;
+}
+
+#filter-button {
+    display: inline-block;
+}
+
+#catalog-page {
+    width: 75%;
+}

@@ -1,0 +1,74 @@
+@import "/global.css";
+
+.quad-img {
+    background: var(--slate-grey);
+    border-radius: 15px;
+    height: 80%;
+    width: 100%;
+}
+
+.collection-text {
+    text-align: center;
+    color: var(--wraith-white);
+    font-size: var(--font-large);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 5px 0 0 0;
+}
+
+.col3 {
+    display: inline-block;
+    margin: 35px;
+    height: 800px;
+}
+
+.col3-left {
+    width: 300px;
+}
+
+.col3-center {
+    width: 400px;
+}
+
+.col3-right {
+    width: 250px;
+}
+
+#collection-a {
+    height: 60%;
+    width: 100%;
+}
+
+#collection-b {
+    height: 47%;
+    width: 100%;
+}
+
+#collection-c {
+    height: 56%;
+    width: 100%;
+}
+
+#collection-d {
+    height: 40%;
+    width: 100%;
+}
+
+#collection-e {
+    height: 25%;
+    width: 100%;
+}
+
+#collection-f {
+    height: 25%;
+    width: 100%;
+}
+
+#collection-g {
+    height: 45%;
+    width: 100%;
+}
+
+#collections-page {
+    width: 63%;
+    margin-top: 5vh;
+}
