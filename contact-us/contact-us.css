@@ -1,0 +1,54 @@
+@import "/global.css";
+
+#contact-us-page {
+    width: 60%;
+}
+
+#contact-us {
+    display: inline-block;
+    width: 45%;
+    margin-right: 5%;
+}
+
+#contact-us-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--flesh-red-1);
+    margin: 10px auto;
+}
+
+#contact-us-form {
+    background: linear-gradient(var(--dark-blue) 75%, var(--volcanic-blue), 
+                var(--dark-blue) 98%);
+    height: 500px;
+    border-radius: 5px;
+}
+
+#contact-us-submit {
+    height: 7%;
+    width: fit-content;
+    margin-right: 5%;
+    float: right;
+}
+
+#contact-us-textbox {
+    height: 80%;
+    width: 90%;
+    margin: 3%;
+    margin-bottom: 1%;
+    resize: none;
+    border-radius: 5px;
+    padding: 2%;
+    background: var(--smoke-blue);
+    border: 2px solid var(--volcanic-blue);
+}
+
+#staff-section {
+    display: inline-block;
+    height: 500px;
+    width: 45%;
+    margin-left: 4%;
+}
+
+#contact-us-page {
+    margin: 5vh auto;
+}

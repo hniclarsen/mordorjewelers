@@ -4,6 +4,43 @@ h1 {
     display: inline-block;
 }
 
+#products {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.product {
+    display: inline-block;
+    margin: 20px 57px;
+    height: 250px;
+    width: 200px;
+}
+
+.product-text {
+    color: var(--wraith-white);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.product-name {
+    font-size: var(--font-medium);
+}
+
+.product-price {
+    font-size: var(--font-small);
+}
+
+.catalog-page-num {
+    padding: 1px 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--font-large);
+    font-weight: bold;
+    background: var(--amber-yellow);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--volcanic-red);
+}
+
 #catalog-toolbar {
     width: 675px;
     margin: 0 auto;
@@ -21,4 +58,8 @@ h1 {
 
 #catalog-page {
     width: 75%;
+}
+
+#catalog-page-nums {
+    margin: 10px auto 30px auto;
 }

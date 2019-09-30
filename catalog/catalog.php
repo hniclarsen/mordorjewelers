@@ -9,7 +9,7 @@
     <body>
         <?php require_once "../header-nav.html" ?>
         <div id="catalog-page" class="center">
-            <div id="catalog-toolbar">
+            <form id="catalog-toolbar">
                 <h1>Catalog</h1>
                 <div id="searchbar">
                     <input type="text" placeholder="Search"/>
@@ -17,6 +17,95 @@
                 <div id="filter-button">
                     <input type="button" value="Filter"/>
                 </div>
+            </form>
+            <div id="products">
+                <div class="product">
+                    <img class="round-img"/>
+                    <div class="product-text">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img class="round-img"/>
+                    <div class="product-text">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img class="round-img"/>
+                    <div class="product-text">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img class="round-img"/>
+                    <div class="product-text">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img class="round-img"/>
+                    <div class="product-text">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img class="round-img"/>
+                    <div class="product-text">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img class="round-img"/>
+                    <div class="product-text">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img class="round-img"/>
+                    <div class="product-text">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img class="round-img"/>
+                    <div class="product-text">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img class="round-img"/>
+                    <div class="product-text">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img class="round-img"/>
+                    <div class="product-text">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img class="round-img"/>
+                    <div class="product-text">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                    </div>
+                </div>
+            </div>
+            <div id="catalog-page-nums" class="center">
+                <span class="catalog-page-num">1</span>
             </div>
         </div>
         <?php require_once "../footer.html" ?>

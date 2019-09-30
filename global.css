@@ -124,6 +124,7 @@ input[type=submit] {
     padding: 5px 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
+    width: fit-content;
 }
 
 input[type=submit]:hover {
@@ -169,9 +170,9 @@ input[type=button]:hover {
 }
 
 .social-media {
+    display: inline-flex;
     color: var(--amber-yellow);
     list-style-type: none;
-    display: inline-flex;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: var(--font-small);
     margin: 0 auto 10px;
@@ -182,12 +183,20 @@ input[type=button]:hover {
 }
 
 .social-media li {
+    display: inline-block;
     margin: 0 20px;
 }
 
 .round-img {
     background: var(--slate-grey);
     border-radius: 50%;
+    height: calc(100% - 50px);
+    width: 100%;
+}
+
+.box-img {
+    background: var(--slate-grey);
+    border-radius: 5px;
     height: calc(100% - 50px);
     width: 100%;
 }
