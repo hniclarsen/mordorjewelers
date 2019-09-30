@@ -1,13 +1,14 @@
 @import "/global.css";
 
-#contact-us-page {
-    width: 60%;
+.box-img {
+    width: 90%;
 }
 
 #contact-us {
     display: inline-block;
     width: 45%;
     margin-right: 5%;
+    vertical-align: top;
 }
 
 #contact-us-text {
@@ -44,11 +45,14 @@
 
 #staff-section {
     display: inline-block;
-    height: 500px;
-    width: 45%;
+    height: 400px;
+    width: 40%;
     margin-left: 4%;
+    position: relative;
+    top: 40px;
 }
 
 #contact-us-page {
-    margin: 5vh auto;
+    margin: 5vh auto 10vh;
+    width: 60%;
 }

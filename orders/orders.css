@@ -1,0 +1,6 @@
+@import "/global.css";
+
+#orders-page {
+    width: 75%;
+    margin: 5vh auto 10vh;
+}
