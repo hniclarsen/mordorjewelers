@@ -1,5 +1,74 @@
 @import "/global.css";
 
+.order-header {
+    color: var(--flesh-red-1);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-large);
+}
+
+.order-information {
+    color: var(--flesh-red-0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-medium);
+}
+
+.box-img {
+    height: 200px;
+    width: 200px;
+    vertical-align: top;
+}
+
+.product-information {
+    height: 200px;
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 0;
+}
+
+.product-details {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    padding-left: 15px;
+}
+
+.total {
+    position: relative;
+    left: 95px;
+}
+
+#order-num {
+    float: right;
+}
+
+#product-name {
+    display: block;
+    color: var(--citrus-orange);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-xlarge);
+    margin-bottom: 15px;
+}
+
+#product-price {
+    color: var(--blood-red-0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-large );
+    margin-bottom: 20px;
+}
+
+#view-item {
+    background: linear-gradient(var(--volcanic-blue), var(--ash-blue), var(--volcanic-blue));
+    border: 2px solid var(--volcanic-blue);
+    padding: 6px 18px;
+    margin-top: 15px;
+}
+
+#view-item:hover {
+    background: linear-gradient(var(--ash-blue), var(--volcanic-blue), var(--ash-blue));
+    border: 2px solid var(--ash-blue);
+}
+
 #orders-page {
     width: 75%;
     margin: 5vh auto 10vh;

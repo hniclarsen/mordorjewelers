@@ -31,6 +31,7 @@
     --font-small:       12px;
     --font-medium:      15px;
     --font-large:       18px;
+    --font-xlarge:      24px;
 
     --background: linear-gradient(90deg, var(--shadow-black), var(--shadow-blue) 10%, 
                     var(--night-blue), var(--shadow-blue) 90%, var(--shadow-black));
