@@ -1,0 +1,38 @@
+@import "/global.css";
+
+.wishlist-item {
+    margin: 20px 5%;
+    display: inline-block;
+}
+
+.wishlist-item-image {
+    height: 200px;
+    width: 200px;
+}
+
+.wishlist-item-name {
+    color: var(--amber-yellow);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-xlarge);
+    text-align: center;
+}
+
+.wishlist-item-price {
+    color: var(--volcanic-red);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-large);
+    text-align: center;
+}
+
+#wishlist-items {
+    margin: 0 9%;
+}
+
+#wishlist-page {
+    width: 90%;
+    margin: 5vh auto;
+}
+
+#wishlist-page h1 {
+    margin-bottom: 40px;
+}

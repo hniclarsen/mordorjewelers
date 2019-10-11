@@ -152,6 +152,21 @@ input[type=button]:hover {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+select {
+    background: none;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--volcanic-blue);
+    font-size: var(--font-small);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+option {
+    background: var(--dark-blue);
+    color: var(--wraith-white);
+}
+
 .header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
