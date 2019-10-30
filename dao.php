@@ -5,7 +5,7 @@ class Dao {
     private $host = "us-cdbr-iron-east-05.cleardb.net";
     private $db = "passheroku_2f960b6202ae0cc";
     private $user = "b57997f748d7a0";
-    private $ = "d1b50197";
+    private $pass = "d1b50197";
     private $logger;
 
     public function __construct() {
