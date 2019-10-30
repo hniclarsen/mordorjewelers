@@ -10,18 +10,18 @@
         <?php require_once "../header-nav.html" ?>
         <div id="sign-up-page">
             <h1 class="center">Sign Up</h1>
-            <form class="form1" id="sign-up">
+            <form action="sign-up-handler.php" method="post" class="form1" id="sign-up">
                 <div class="col2-left">
                     <label for="name">Your Name</label>
-                    <input id="name" type="text" placeholder="Your Name"/>
+                        <input id="name" name="name" type="text" placeholder="Your Name"/>
                     <label for="passwd">Password</label>
-                    <input id="passwd" type="text" placeholder="Password"/>
+                        <input id="passwd" name="passwd" type="text" placeholder="Password"/>
                 </div>
                 <div class="col2-right">
                     <label for="email">E-mail Address</label>
-                    <input id="email" type="text" placeholder="E-mail Address"/>
+                        <input id="email" name="email" type="text" placeholder="E-mail Address"/>
                     <label for="conf-passwd">Confirm Password</label>
-                    <input id="conf-passwd" type="text" placeholder="Confirm Password"/>
+                        <input id="conf-passwd" name="conf-passwd" type="text" placeholder="Confirm Password"/>
                 </div>
                 <div id="sign-up-submit">
                     <input type="submit" value="Sign Up"/>

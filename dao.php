@@ -1,29 +1,50 @@
 <?php
-    require_once 'KLogger.php';
+require_once "logger.php";
 
-    class Dao {
-        private $host = "us-cdbr-iron-east-05.cleardb.net";
-        private $db = "heroku_2f960b6202ae0cc";
-        private $user = "b57997f748d7a0";
-        private $pass = "d1b50197";
-        private $logger;
+class Dao {
+    private $host = "localhost";//"us-cdbr-iron-east-05.cleardb.net";
+    private $db = "mordor_jewelers";//"heroku_2f960b6202ae0cc";
+    private $user = "root";//"b57997f748d7a0";
+    private $pass = "";//"d1b50197";
+    private $logger;
 
-        public function __construct() {
-            $this->logger = new KLogger("/logs/log.txt", KLogger::DEBUG);
-        }
-
-        public function getConnection() {
-            try {
-                $connection = new PDO(
-                    "mysql:host={$this->host};
-                    dbname={$this->db}",
-                    $this->user,
-                    $this->pass
-                );
-            } catch (Exception $e) {
-                echo print_r($e, 1);
-            }
-            return $connection;
-        }
+    public function __construct() {
+        $this->logger = new KLogger("/logs/log.txt", KLogger::DEBUG);
     }
+
+    private function getConnection() {
+        try {
+            $connection = new PDO(
+                "mysql:host={$this->host};
+                dbname={$this->db}",
+                $this->user,
+                $this->pass
+            );
+        } catch (Exception $e) {
+            $this->logger->LogInfo("Database connection failed: {$e}");
+        }
+        return $connection;
+    }
+
+    public function createUser($name, $email, $password) {
+        $connection = $this->getConnection();
+        try {
+            $name = trim($name);
+            $email = filter_var(trim($email), FILTER_SANITIZE_EMAIL);
+            $password = password_hash(trim($password), PASSWORD_DEFAULT);
+
+            $query = "INSERT INTO users (name, email, password, accessType)
+                    VALUES (:name, :email, :password, 2)";
+            $query = $connection->prepare($query);
+            $query->bindParam(":name", $name);
+            $query->bindParam(":email", $email);
+            $query->bindParam(":password", $password);
+            $query->execute();
+        } catch(Exception $e) {
+            $this->logger->LogInfo("Account creation failed: {$e}");
+            exit;
+        }
+        return 1;
+    }
+}
 ?>
