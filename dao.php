@@ -3,9 +3,9 @@ require_once "logger.php";
 
 class Dao {
     private $host = "us-cdbr-iron-east-05.cleardb.net";
-    private $db = "heroku_2f960b6202ae0cc";
+    private $db = "passheroku_2f960b6202ae0cc";
     private $user = "b57997f748d7a0";
-    private $pass = "d1b50197";
+    private $ = "d1b50197";
     private $logger;
 
     public function __construct() {
@@ -28,7 +28,7 @@ class Dao {
 
     public function createUser($name, $email, $password) {
         $connection = $this->getConnection();
-        try {/*
+        try {
             $name = trim($name);
             $email = filter_var(trim($email), FILTER_SANITIZE_EMAIL);
             $password = password_hash(trim($password), PASSWORD_DEFAULT);
