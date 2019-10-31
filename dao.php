@@ -41,7 +41,7 @@ class Dao {
             $query->bindParam(":name", $name);
             $query->bindParam(":email", $email);
             $query->bindParam(":password", $password);
-            $query->execute();*/
+            $query->execute();
         } catch(Exception $e) {
             $this->logger->LogInfo("Account creation failed: {$e}");
             exit;
