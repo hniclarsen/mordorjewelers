@@ -36,7 +36,7 @@ class Dao {
 
             $query = "INSERT INTO users (userUUID, name, email, password, accessType)
                     VALUES (:UUID, :name, :email, :password, 1)";
-            $query = $connection->prepare($query);
+            $query = $connection->prepare("Select * from users");
             $query->bindParam(":UUID", $UUID);
             $query->bindParam(":name", $name);
             $query->bindParam(":email", $email);
