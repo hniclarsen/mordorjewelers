@@ -34,7 +34,7 @@ class Dao {
             $email = filter_var(trim($email), FILTER_SANITIZE_EMAIL);
             $password = password_hash(trim($password), PASSWORD_DEFAULT);
 
-            $query = "INSERT INTO users
+            $query = "INSERT INTO users (userUUID, name, email, password, accessType)
                     VALUES (:UUID, :name, :email, :password, 1)";
             $query = $connection->prepare($query);
             $query->bindParam(":UUID", $UUID);
