@@ -7,5 +7,5 @@ require_once "../dao.php";
 $dao = new Dao();
 $dao->createUser($_POST['name'], $_POST['email'], $_POST['passwd']);
 $_SESSION['sentiment'] = 'OK';
-header("Location: http://mordorjewelers.herokuapp.com/signup/sign-up.php");
+header("Location: /signup/sign-up.php");
 ?>
