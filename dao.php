@@ -3,7 +3,7 @@ require_once "logger.php";
 
 class Dao {
     private $host = "us-cdbr-iron-east-05.cleardb.net";
-    private $db = "passheroku_2f960b6202ae0cc";
+    private $db = "heroku_2f960b6202ae0cc";
     private $user = "b57997f748d7a0";
     private $pass = "d1b50197";
     private $logger;
@@ -34,10 +34,10 @@ class Dao {
             $email = filter_var(trim($email), FILTER_SANITIZE_EMAIL);
             $password = password_hash(trim($password), PASSWORD_DEFAULT);
 
-            $query = "INSERT INTO users (name, email, password, accessType)
-                    VALUES (:name, :email, :password, 1)";
+            $query = "INSERT INTO users (userUUID, name, email, password, accessType)
+                    VALUES (:UUID, :name, :email, :password, 1)";
             $query = $connection->prepare("$query");
-            //$query->bindParam(":UUID", $UUID);
+            $query->bindParam(":UUID", $UUID);
             $query->bindParam(":name", $name);
             $query->bindParam(":email", $email);
             $query->bindParam(":password", $password);
