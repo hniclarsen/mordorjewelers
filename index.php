@@ -40,7 +40,7 @@
             </div>
         </div>
         <?php 
-            print_r($_COOKIE);
+            print_r($_SESSION['sentiment']);
         ?>
         <?php require_once "./footer.html" ?>
     </body>
