@@ -48,5 +48,24 @@ class Dao {
         }
         return 1;
     }
+
+    public function getUser($email, $password) {
+        $connection = $this->getConnection();
+        try {
+            $password = password_hash(trim($password), PASSWORD_DEFAULT);
+            
+            $query = "SELECT userUUID
+                    FROM users
+                    WHERE email = :email
+                    AND password = :password";
+            $query->bindParam(":email", $email);
+            $query->bindParam(":password", $password);
+            $query->execute();
+            return $conn->query($query);
+        } catch(Exception $e) {
+            $this->logger->LogInfo("Failed to retrieve user: {$e}");
+            exit;
+        }
+    }
 }
 ?>

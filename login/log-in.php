@@ -10,12 +10,12 @@
         <?php require_once "../header-nav.html" ?>
         <div id="log-in-page">
             <h1 class="center">Log In</h1>
-            <form class="form1" id="log-in">
+            <form action="log-in-handler.php" method="get" class="form1" id="log-in">
                 <div id="log-in-fields">
                     <label for="email">E-mail Address</label>
-                    <input id="email" type="text" placeholder="E-mail Address"/>
+                      <input id="email" name="email" type="text" placeholder="E-mail Address"/>
                     <label for="passwd">Password</label>
-                    <input id="passwd" type="text" placeholder="Password"/>
+                      <input id="passwd" name="passwd" type="text" placeholder="Password"/>
                 </div>
                 <div id="log-in-submit">
                     <input type="submit" value="Log In"/>
