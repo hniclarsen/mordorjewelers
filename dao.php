@@ -9,7 +9,7 @@ class Dao {
     private $logger;
 
     public function __construct() {
-        $this->logger = new KLogger("/logs/log.txt", KLogger::DEBUG);
+        $this->logger = new KLogger("/logs", KLogger::DEBUG);
     }
 
     private function getConnection() {
@@ -36,13 +36,13 @@ class Dao {
 
             $query = "INSERT INTO users (userUUID, name, email, password, accessType)
                     VALUES (:UUID, :name, :email, :password, 1)";
-            $query = $connection->prepare("$query");
-            $query->bindParam(":UUID", $UUID);
-            $query->bindParam(":name", $name);
-            $query->bindParam(":email", $email);
-            $query->bindParam(":password", $password);
+            $stmt = $connection->prepare("$query");
+            $stmt->bindParam(":UUID", $UUID);
+            $stmt->bindParam(":name", $name);
+            $stmt->bindParam(":email", $email);
+            $stmt->bindParam(":password", $password);
 
-            return $query->execute();
+            return $stmt->execute();
         } catch(Exception $e) {
             $this->logger->LogInfo("Account creation failed: {$e}");
             exit;
@@ -52,17 +52,17 @@ class Dao {
     public function getUser($email, $password) {
         $connection = $this->getConnection();
         try {
-            $email = filter_var(trim($email), FILTER_SANITIZE_EMAIL);
-            $password = password_hash(trim($password), PASSWORD_DEFAULT);
+            $email = filter_var(trim($email), FILTER_VALIDATE_EMAIL);
 
-            $query = "SELECT userUUID
-                    FROM users
-                    WHERE email = :email
-                    AND password = :password";
-            $query = $connection->prepare($query);
-            $query->execute([':email'=>$email, ':password'=>$password]);
+            $query = "SELECT * FROM users
+                    WHERE email=?";
+            $stmt = $connection->prepare($query);
+            $stmt->execute([$email]);
    
-            return $query->fetchAll();
+            $results = $stmt->fetchAll();
+            $valid = password_verify($password, $results[0]['password']);
+            
+            if($valid) return $results[0];
         } catch(Exception $e) {
             $this->logger->LogInfo("Failed to retrieve user: {$e}");
             exit;
