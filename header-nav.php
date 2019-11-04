@@ -15,11 +15,11 @@
                     CONTACT US
                 </a></li>
             </span>
-            <span class="center">
+            <div id="display-name" class="center">
                 <?php
                     print_r($_COOKIE['username']);
                 ?>
-            </span>
+            </div>
             <span class="right">
                 <li><a href="/login/log-in.php">
                     LOGIN
