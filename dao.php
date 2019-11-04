@@ -59,7 +59,7 @@ class Dao {
                     FROM users
                     WHERE email = {$email}
                     AND password = {$password}";
-            return $conn->query($query, PDO::FETCH_ASSOC);
+            return $connection->query($query);
         } catch(Exception $e) {
             $this->logger->LogInfo("Failed to retrieve user: {$e}");
             exit;
