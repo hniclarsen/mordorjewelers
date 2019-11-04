@@ -15,9 +15,9 @@
                     CONTACT US
                 </a></li>
             </span>
-            <span>
+            <span class="center">
                 <?php
-                    print_r("asdf" . $_COOKIE['username']);
+                    print_r($_COOKIE['username']);
                 ?>
             </span>
             <span class="right">
