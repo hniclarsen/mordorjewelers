@@ -15,13 +15,13 @@
                     <label for="name">Your Name</label>
                         <input id="name" name="name" type="text" placeholder="Your Name"/>
                     <label for="passwd">Password</label>
-                        <input id="passwd" name="passwd" type="text" placeholder="Password"/>
+                        <input id="passwd" name="passwd" type="password" placeholder="Password"/>
                 </div>
                 <div class="col2-right">
                     <label for="email">E-mail Address</label>
                         <input id="email" name="email" type="text" placeholder="E-mail Address"/>
                     <label for="conf-passwd">Confirm Password</label>
-                        <input id="conf-passwd" name="conf-passwd" type="text" placeholder="Confirm Password"/>
+                        <input id="conf-passwd" name="conf-passwd" type="password" placeholder="Confirm Password"/>
                 </div>
                 <div id="sign-up-submit">
                     <input type="submit" value="Sign Up"/>

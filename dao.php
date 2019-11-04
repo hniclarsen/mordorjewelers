@@ -2,10 +2,10 @@
 require_once "logger.php";
 
 class Dao {
-    private $host = "us-cdbr-iron-east-05.cleardb.net";
-    private $db = "heroku_2f960b6202ae0cc";
-    private $user = "b57997f748d7a0";
-    private $pass = "d1b50197";
+    private $host = "localhost";//"us-cdbr-iron-east-05.cleardb.net";
+    private $db = "mordor_jewelers";//"heroku_2f960b6202ae0cc";
+    private $user = "root";//"b57997f748d7a0";
+    private $pass = "";//"d1b50197";
     private $logger;
 
     public function __construct() {
@@ -41,12 +41,12 @@ class Dao {
             $query->bindParam(":name", $name);
             $query->bindParam(":email", $email);
             $query->bindParam(":password", $password);
-            $query->execute();
+
+            return $query->execute();
         } catch(Exception $e) {
             $this->logger->LogInfo("Account creation failed: {$e}");
             exit;
         }
-        return 1;
     }
 
     public function getUser($email, $password) {
@@ -57,9 +57,12 @@ class Dao {
 
             $query = "SELECT userUUID
                     FROM users
-                    WHERE email = {$email}
-                    AND password = {$password}";
-            return $connection->query($query);
+                    WHERE email = :email
+                    AND password = :password";
+            $query = $connection->prepare($query);
+            $query->execute([':email'=>$email, ':password'=>$password]);
+   
+            return $query->fetchAll();
         } catch(Exception $e) {
             $this->logger->LogInfo("Failed to retrieve user: {$e}");
             exit;

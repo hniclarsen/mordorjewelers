@@ -39,6 +39,9 @@
                 </div>
             </div>
         </div>
+        <?php 
+            print_r($_COOKIE);
+        ?>
         <?php require_once "./footer.html" ?>
     </body>
 </html>

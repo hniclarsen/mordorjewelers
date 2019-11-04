@@ -15,7 +15,7 @@
                     <label for="email">E-mail Address</label>
                       <input id="email" name="email" type="text" placeholder="E-mail Address"/>
                     <label for="passwd">Password</label>
-                      <input id="passwd" name="passwd" type="text" placeholder="Password"/>
+                      <input id="passwd" name="passwd" type="password" placeholder="Password"/>
                 </div>
                 <div id="log-in-submit">
                     <input type="submit" value="Log In"/>
