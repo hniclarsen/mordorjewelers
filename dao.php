@@ -57,10 +57,8 @@ class Dao {
 
             $query = "SELECT userUUID
                     FROM users
-                    WHERE email = :email
-                    AND password = :password";
-            $query->bindParam(":email", $email);
-            $query->bindParam(":password", $password);
+                    WHERE email = {$email}
+                    AND password = {$password}";
             $query->execute();
             return $conn->query($query);
         } catch(Exception $e) {
