@@ -15,11 +15,6 @@
                     CONTACT US
                 </a></li>
             </span>
-            <div id="display-name" class="center">
-                <?php
-                    print_r($_COOKIE['username']);
-                ?>
-            </div>
             <span class="right">
                 <li><a href="/login/log-in.php">
                     LOGIN
@@ -34,6 +29,11 @@
                     CART
                 </a></li>
             </span>
+            <div id="display-name" class="center">
+                <?php
+                    print_r("Welcome, " . $_COOKIE['username']);
+                ?>
+            </div>
         </ul>
     </header>
     <hr/>
