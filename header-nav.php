@@ -31,7 +31,9 @@
             </span>
             <div id="display-name" class="center">
                 <?php
-                    print_r("Welcome, " . $_COOKIE['username']);
+                    if($_COOKIE['username']) {
+                        print_r("Welcome, " . $_COOKIE['username']);
+                    }
                 ?>
             </div>
         </ul>
