@@ -38,6 +38,9 @@
                     <div class="item-price">Price</div>
                 </div>
             </div>
+            <?php
+                print_r($_COOKIE);
+            ?>
         </div>
         <?php require_once "./footer.html" ?>
     </body>
