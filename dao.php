@@ -59,7 +59,6 @@ class Dao {
                     FROM users
                     WHERE email = {$email}
                     AND password = {$password}";
-            $query->execute();
             return $conn->query($query);
         } catch(Exception $e) {
             $this->logger->LogInfo("Failed to retrieve user: {$e}");
