@@ -52,8 +52,9 @@ class Dao {
     public function getUser($email, $password) {
         $connection = $this->getConnection();
         try {
+            $email = filter_var(trim($email), FILTER_SANITIZE_EMAIL);
             $password = password_hash(trim($password), PASSWORD_DEFAULT);
-            
+
             $query = "SELECT userUUID
                     FROM users
                     WHERE email = :email
