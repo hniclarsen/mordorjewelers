@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="/collections/collections.css"/>
     </head>
     <body>
-        <?php require_once "../header-nav.html" ?>
+        <?php require_once "../header-nav.php" ?>
         <div id="collections-page" class="center">
             <h1 class="center">Collections</h1>
             <div class="col3 col3-left">

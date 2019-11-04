@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="/login/login.css"/>
     </head>
     <body>
-        <?php require_once "../header-nav.html" ?>
+        <?php require_once "../header-nav.php" ?>
         <div id="log-in-page">
             <h1 class="center">Log In</h1>
             <form action="log-in-handler.php" method="post" class="form1" id="log-in">

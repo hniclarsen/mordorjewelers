@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="/contact-us/contact-us.css"/>
     </head>
     <body>
-        <?php require_once "../header-nav.html" ?>
+        <?php require_once "../header-nav.php" ?>
         <div id="contact-us-page" class="center">
             <h1 class="center">Contact Us</h1>
             <div id="contact-us">

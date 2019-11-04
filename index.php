@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="/index.css"/>
     </head>
     <body>
-        <?php require_once "./header-nav.html" ?>
+        <?php require_once "./header-nav.php" ?>
         <img id="home-banner" src="img/home_banner.png"/>
         <div class="center">
             <div class="featured-item">
@@ -39,9 +39,6 @@
                 </div>
             </div>
         </div>
-        <?php 
-            print_r($_SESSION['sentiment']);
-        ?>
         <?php require_once "./footer.html" ?>
     </body>
 </html>

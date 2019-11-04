@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="/catalog/catalog.css"/>
     </head>
     <body>
-        <?php require_once "../header-nav.html" ?>
+        <?php require_once "../" ?>
         <div id="catalog-page" class="center">
             <form id="catalog-toolbar">
                 <h1>Catalog</h1>

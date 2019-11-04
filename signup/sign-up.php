@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="/signup/sign-up.css"/>
     </head>
     <body>
-        <?php require_once "../header-nav.html" ?>
+        <?php require_once "../header-nav.php" ?>
         <div id="sign-up-page">
             <h1 class="center">Sign Up</h1>
             <form action="sign-up-handler.php" method="post" class="form1" id="sign-up">

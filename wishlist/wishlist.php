@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="/wishlist/wishlist.css"/>
     </head>
     <body>
-        <?php require_once "../header-nav.html" ?>
+        <?php require_once "../header-nav.php" ?>
         <div id="wishlist-page" class="center">
             <h1 class="center">Wish List</h1>
             <div id="wishlist-items">

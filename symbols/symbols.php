@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="./symbols.css"/>
     </head>
     <body>
-        <?php require_once "../header-nav.html" ?>
+        <?php require_once "../header-nav.php" ?>
         <div class="center" id="symbols-page">
             <h1 class="center">Symbols</h1>
             <div>

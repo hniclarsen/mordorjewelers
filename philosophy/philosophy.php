@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="/philosophy/philosophy.css"/>
     </head>
     <body>
-        <?php require_once "../header-nav.html" ?>
+        <?php require_once "../header-nav.php" ?>
         <img src="/img/eye.png" id="philosophy-hero"/>
         <div id="philosophy-page">
             <h1>Philosophy</h1>
