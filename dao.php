@@ -34,10 +34,10 @@ class Dao {
             $email = filter_var(trim($email), FILTER_SANITIZE_EMAIL);
             $password = password_hash(trim($password), PASSWORD_DEFAULT);
 
-            $query = "INSERT INTO users (userUUID, name, email, password, accessType)
-                    VALUES (:UUID, :name, :email, :password, 1)";
-            $query = $connection->prepare("select * from access");
-            $query->bindParam(":UUID", $UUID);
+            $query = "INSERT INTO users (name, email, password, accessType)
+                    VALUES (:name, :email, :password, 1)";
+            $query = $connection->prepare("$query");
+            //$query->bindParam(":UUID", $UUID);
             $query->bindParam(":name", $name);
             $query->bindParam(":email", $email);
             $query->bindParam(":password", $password);
