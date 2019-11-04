@@ -17,7 +17,7 @@
             </span>
             <span>
                 <?php
-                    print_r("asdf" . $_COOKIE);
+                    print_r("asdf" . $_COOKIE['username']);
                 ?>
             </span>
             <span class="right">
