@@ -63,7 +63,7 @@ class Dao {
             $valid = password_verify($password, $results[0]['password']);
             
             if($valid) return $results[0];
-            else return false;
+            else return null;
         } catch(Exception $e) {
             $this->logger->LogInfo("Failed to retrieve user: {$e}");
             exit;
