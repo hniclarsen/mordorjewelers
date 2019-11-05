@@ -22,7 +22,7 @@
                         LOGIN
                     </a></li>';
                 } else {
-                    echo '<li><a href="/">
+                    echo '<li><a href="sign-out-handler.php">
                         SIGN OUT
                     </a></li>';
                 }
