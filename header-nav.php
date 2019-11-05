@@ -16,9 +16,11 @@
                 </a></li>
             </span>
             <span class="right">
-                <li><a href="/login/log-in.php">
+                <?php
+                echo '<li><a href="/login/log-in.php">
                     LOGIN
-                </a></li>
+                </a></li>';
+                ?>
                 <li><a href="/orders/orders.php">
                     ORDERS
                 </a></li>
