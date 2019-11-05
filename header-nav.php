@@ -17,9 +17,15 @@
             </span>
             <span class="right">
                 <?php
-                echo '<li><a href="/login/log-in.php">
-                    LOGIN
-                </a></li>';
+                if(!$_COOKIE['userUUID']) {
+                    echo '<li><a href="/login/log-in.php">
+                        LOGIN
+                    </a></li>';
+                } else {
+                    echo '<li><a href="/">
+                        SIGN OUT
+                    </a></li>';
+                }
                 ?>
                 <li><a href="/orders/orders.php">
                     ORDERS
