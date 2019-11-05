@@ -29,15 +29,26 @@ class Dao {
     public function createUser($name, $email, $password) {
         $connection = $this->getConnection();
         try {
-            $UUID = uniqid('', true);
-            $name = trim($name);
+            // check if e-mail is already registered
             $email = filter_var(trim($email), FILTER_SANITIZE_EMAIL);
+
+            $query = "SELECT COUNT(*) as registerCount FROM users
+                    WHERE email=?";
+            $stmt = $connection->prepare($query);
+            $stmt->execute([$email]);
+
+            $count = $stmt->fetchAll();
+            if($count['registerCount'] !== 0) return null;
+
+            // add user to database
+            $UUID = uniqid('', true);
+            $name = filter_var(trim($name), FILTER_SANITIZE_STRING);
             $password = password_hash(trim($password), PASSWORD_DEFAULT);
             $creation = date('Y-m-d H:i:s');
 
             $query = "INSERT INTO users (userUUID, name, email, password, accessType, creationDate)
                     VALUES (:UUID, :name, :email, :password, 1, :creation)";
-            $stmt = $connection->prepare("$query");
+            $stmt = $connection->prepare($query);
             $stmt->bindParam(":UUID", $UUID);
             $stmt->bindParam(":name", $name);
             $stmt->bindParam(":email", $email);
