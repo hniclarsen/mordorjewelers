@@ -16,9 +16,11 @@
                 </a></li>
             </span>
             <span class="right">
-                <li><a href="/login/log-in.php">
-                    LOGIN
-                </a></li>
+                <?php
+                    print_r('<li><a href="/login/log-in.php">
+                        LOGIN
+                    </a></li>)';
+                ?>
                 <li><a href="/orders/orders.php">
                     ORDERS
                 </a></li>
@@ -31,9 +33,9 @@
             </span>
             <div id="display-name" class="center">
                 <?php
-                    if($_COOKIE['username']) {
-                        print_r("Welcome, " . $_COOKIE['username']);
-                    }
+                if($_COOKIE['username']) {
+                    print_r("Welcome, " . $_COOKIE['username']);
+                }
                 ?>
             </div>
         </ul>
