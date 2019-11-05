@@ -17,7 +17,8 @@
             </span>
             <span class="right">
                 <?php
-                if(isset($_COOKIE['userUUID'])) {
+                session_start();
+                if(isset($_SESSION['userUUID'])) {
                     echo '<li><a href="sign-out-handler.php">
                         SIGN OUT
                     </a></li>';
@@ -39,8 +40,8 @@
             </span>
             <div id="display-name" class="center">
                 <?php
-                if($_COOKIE['username']) {
-                    print_r("Welcome, " . $_COOKIE['username']);
+                if(isset($_SESSION['username'])) {
+                    print_r("Welcome, " . $_SESSION['username']);
                 }
                 ?>
             </div>

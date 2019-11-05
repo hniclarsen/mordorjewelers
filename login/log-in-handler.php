@@ -6,8 +6,8 @@ $presets = $_POST;
 require_once "../dao.php";
 $dao = new Dao();
 $userUUID = $dao->getUser($_POST['email'], $_POST['passwd']);
-setcookie("userUUID", $userUUID['userUUID'], time()+1440, "/");
-setcookie("username", $userUUID['name'], time()+1440, "/");
+$_SESSION['userUUID'] = $userUUID['userUUID'];
+$_SESSION['username'] = $userUUID['name'];
 
 $_SESSION['sentiment'] = 'OK';
 header("Location: /");
