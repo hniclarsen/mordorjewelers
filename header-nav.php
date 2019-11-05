@@ -17,7 +17,7 @@
             </span>
             <span class="right">
                 <?php
-                if(!$_COOKIE['userUUID']) {
+                if($_COOKIE['userUUID'] == '') {
                     echo '<li><a href="/login/log-in.php">
                         LOGIN
                     </a></li>';
