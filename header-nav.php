@@ -17,13 +17,13 @@
             </span>
             <span class="right">
                 <?php
-                if($_COOKIE['userUUID'] == '') {
-                    echo '<li><a href="/login/log-in.php">
-                        LOGIN
-                    </a></li>';
-                } else {
+                if($_COOKIE['userUUID']) {
                     echo '<li><a href="sign-out-handler.php">
                         SIGN OUT
+                    </a></li>';
+                } else {
+                    echo '<li><a href="/login/log-in.php">
+                        LOGIN
                     </a></li>';
                 }
                 ?>
