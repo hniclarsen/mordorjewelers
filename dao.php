@@ -33,14 +33,16 @@ class Dao {
             $name = trim($name);
             $email = filter_var(trim($email), FILTER_SANITIZE_EMAIL);
             $password = password_hash(trim($password), PASSWORD_DEFAULT);
+            $creation = date('Y-m-d H:i:s');
 
-            $query = "INSERT INTO users (userUUID, name, email, password, accessType)
-                    VALUES (:UUID, :name, :email, :password, 1)";
+            $query = "INSERT INTO users (userUUID, name, email, password, accessType, creationDate)
+                    VALUES (:UUID, :name, :email, :password, 1, :creation)";
             $stmt = $connection->prepare("$query");
             $stmt->bindParam(":UUID", $UUID);
             $stmt->bindParam(":name", $name);
             $stmt->bindParam(":email", $email);
             $stmt->bindParam(":password", $password);
+            $stmt->bindParam(":creation", $creation);
 
             return $stmt->execute();
         } catch(Exception $e) {
@@ -62,7 +64,7 @@ class Dao {
             $results = $stmt->fetchAll();
             $valid = password_verify($password, $results[0]['password']);
             
-            if($valid === true) return $results[0];
+            if($valid) return $results[0];
             else return null;
         } catch(Exception $e) {
             $this->logger->LogInfo("Failed to retrieve user: {$e}");
