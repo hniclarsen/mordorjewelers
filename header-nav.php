@@ -17,7 +17,7 @@
             </span>
             <span class="right">
                 <?php
-                if($_COOKIE['userUUID']) {
+                if(isset($_COOKIE['userUUID'])) {
                     echo '<li><a href="sign-out-handler.php">
                         SIGN OUT
                     </a></li>';
