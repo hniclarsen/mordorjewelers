@@ -16,11 +16,9 @@
                 </a></li>
             </span>
             <span class="right">
-                <?php
-                    print_r('<li><a href="/login/log-in.php">
-                        LOGIN
-                    </a></li>)';
-                ?>
+                <li><a href="/login/log-in.php">
+                    LOGIN
+                </a></li>
                 <li><a href="/orders/orders.php">
                     ORDERS
                 </a></li>
