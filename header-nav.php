@@ -19,7 +19,7 @@
                 <?php
                 session_start();
                 if(isset($_SESSION['userUUID'])) {
-                    echo '<li><a href="sign-out-handler.php">
+                    echo '<li><a href="/sign-out-handler.php">
                         SIGN OUT
                     </a></li>';
                 } else {
