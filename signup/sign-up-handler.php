@@ -32,14 +32,14 @@ if(!preg_match('/[A-Z+a-z+\d+\S]{7,}[!@#\$%\^&\*\(\)]+/', $password)) {
 
 if($errorCount == 0) {
     $dao = new Dao();
-    $dao->createUser($name, $email, $password);
+    $accountCreated = $dao->createUser($name, $email, $password);
 
-    if(empty($dao)) {
-        $_SESSION['message'] = 'E-mail is already registered';
-        header("Location: /signup/sign-up.php");
-    } else {
+    if($accountCreated !== '' && $accountCreated == true) {
         $_SESSION['sentiment'] = 'OK';
-        header("Location: /login/log-in.php");    
+        header("Location: /login/log-in.php");  
+    } else {
+        $_SESSION['message'] = 'E-mail is already registered';
+        header("Location: /signup/sign-up.php");  
     }
 } else {
     header("Location: /signup/sign-up.php");

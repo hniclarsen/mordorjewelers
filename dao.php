@@ -38,7 +38,7 @@ class Dao {
             $stmt->execute([$email]);
 
             $count = $stmt->fetchAll();
-            if($count['registerCount'] !== 0) return null;
+            if(($count[0]['registerCount']) > 0) return false;
 
             // add user to database
             $UUID = uniqid('', true);
