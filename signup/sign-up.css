@@ -12,6 +12,11 @@
     margin: 10px 15px 10px 5px;
 }
 
+#password-rules {
+    color: var(--citrus-orange);
+    margin: 40px auto;
+}
+
 #sign-up {
     width: 500px;
     margin: 0 auto;

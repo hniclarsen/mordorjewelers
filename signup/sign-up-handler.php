@@ -35,7 +35,6 @@ if($errorCount == 0) {
     $accountCreated = $dao->createUser($name, $email, $password);
 
     if($accountCreated !== '' && $accountCreated == true) {
-        $_SESSION['sentiment'] = 'OK';
         header("Location: /login/log-in.php");  
     } else {
         $_SESSION['message'] = 'E-mail is already registered';
