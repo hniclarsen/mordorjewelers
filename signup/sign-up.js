@@ -1,11 +1,21 @@
 $(function() {
     var borderColor = $('#name').css('border-color');
-    $('#name').blur(function() {
-        let val = $('#name').val();
+    var nameField = $('#name');
+    var emailField = $('#email');
+    var passwdField = $('#passwd');
+    var confPasswdField = $('#conf-passwd');
+
+    nameField.blur(function() { highlightInvalid(nameField); });
+    emailField.blur(function() { highlightInvalid(emailField); });
+    passwdField.blur(function() { highlightInvalid(passwdField); });
+    confPasswdField.blur(function() { highlightInvalid(confPasswdField); });
+
+    function highlightInvalid(field) {
+        let val = field.val();
         if(!val) {
-           $('#name').css('border-color', 'var(--volcanic-red)');
+            field.css('border-color', 'var(--volcanic-red)');
         } else {
-            $('#name').css('border-color', borderColor);
+            field.css('border-color', borderColor);
         }
-    });
+    }
 });
