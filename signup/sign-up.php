@@ -29,6 +29,7 @@
                     <input type="submit" value="Sign Up"/>
                 </div>
             </form>
+            <div id="message"></div>
             <div class="text-link"><a href="/login/log-in.php">
                 Already have an account? Log in here.
             </a></div>
