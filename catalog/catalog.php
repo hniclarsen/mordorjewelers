@@ -6,6 +6,7 @@
     </head>
     <body>
         <?php require_once "../header-nav.php" ?>
+        <?php echo count(glob('products/*', GLOB_ONLYDIR));?>
         <div id="catalog-page" class="center">
             <form id="catalog-toolbar">
                 <h1>Catalog</h1>

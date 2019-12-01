@@ -1,0 +1,156 @@
+h1 {
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin: 0;
+    color: var(--smoke-blue);
+}
+
+button {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    border: 2px outset;
+    color: var(--shadow-black);
+    padding: 5px 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+button:hover {
+    border: inset;
+}
+
+.product-page {
+    width: 75%;
+    margin: 75px auto;
+}
+
+.product-page.bottom {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.quad-img {
+    height: 50px;
+    width: 100%;
+    margin-bottom: 15px;
+    background: var(--slate-grey);
+}
+
+.purchasing-subtext {
+    color: var(--ash-blue);
+    font-size: var(--font-medium);
+    font-family: monospace;
+    margin: 20px 0;
+}
+
+#product-information {
+    display: inline-block;
+    width: 40%;
+    margin: 0 50px;
+}
+
+#product-imgs {
+    float: left;
+    height: 400px;
+    width: 470px;
+}
+
+#product-img-selection {
+    float: left;
+    height: 100%;
+    width: 50px;
+    margin-right: 20px;
+}
+
+#product-img-selected {
+    float: right;
+    height: 100%;
+    width: 400px;
+    border-radius: 15px;
+}
+
+#purchasing-options {
+    float: right;
+    background-color: var(--night-blue);
+    border-radius: 15px;
+    width: 230px;
+    height: 500px;
+    padding: 20px;
+}
+
+#related-items {
+    color: var(--flesh-red-1);
+    font-size: var(--font-large);
+    font-family: 'Cinzel Decorative', Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+#product {
+    margin-bottom: 50px;
+}
+
+#price {
+    color: var(--burnt-orange);
+    font-size: var(--font-xxlarge);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#qty {
+    display: inline-block;
+    background-color: var(--citrus-orange);
+    border-color: var(--blood-red-0);
+    border-radius: 15px;
+    font-weight: bold;
+    text-align: center;
+    height: 30px;
+    width: 50px;
+    margin-bottom: 50px;
+}
+
+#add-cart {
+    border-color: var(--sand-yellow);
+    background: linear-gradient(var(--amber-yellow) 10%, 
+                var(--dust-yellow), var(--amber-yellow) 90%);
+}
+
+#add-cart:hover {
+    background: linear-gradient(var(--amber-yellow) 10%, 
+                var(--sand-yellow), var(--amber-yellow) 90%);
+}
+
+#buy-now {
+    border-color: var(--citrus-orange);
+    background: linear-gradient(var(--citrus-orange) 10%, 
+                var(--sand-yellow), var(--citrus-orange) 90%);
+}
+
+#buy-now:hover {
+    background: linear-gradient(var(--burnt-orange) 10%, 
+                var(--amber-yellow), var(--burnt-orange) 90%);
+}
+
+#add-wishlist {
+    border-color: var(--dark-blue);
+    background: linear-gradient(var(--volcanic-blue) 10%, 
+                var(--ash-blue), var(--volcanic-blue) 90%);
+    position: relative;
+    bottom: -75px;
+}
+
+#add-wishlist:hover {
+    background: linear-gradient(var(--dark-blue) 10%, 
+                var(--smoke-blue), var(--dark-blue) 90%);
+}
+
+#related-items .quad-img {
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+    margin: 25px;
+}

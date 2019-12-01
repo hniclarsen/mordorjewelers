@@ -39,6 +39,7 @@ if($errorCount == 0) {
         $userUUID = $dao->getUser($email, $password);
         $_SESSION['userUUID'] = $userUUID['userUUID'];
         $_SESSION['username'] = $userUUID['name'];
+        $_SESSION['userPrivilege'] = $userUUID['accessType'];
         header("Location: /");
     } else {
         $_SESSION['sentiment'] = "Sign-up Unsuccessful.";

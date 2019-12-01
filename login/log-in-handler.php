@@ -7,6 +7,7 @@ $userUUID = $dao->getUser($_POST['email'], $_POST['passwd']);
 if($userUUID) {
     $_SESSION['userUUID'] = $userUUID['userUUID'];
     $_SESSION['username'] = $userUUID['name'];
+    $_SESSION['userPrivilege'] = $userUUID['accessType'];
     header("Location: /");
 } else {
     $_SESSION['message'] = "Invalid login credentials.";

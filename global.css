@@ -32,6 +32,7 @@
     --font-medium:      15px;
     --font-large:       18px;
     --font-xlarge:      24px;
+    --font-xxlarge:     28px;
 
     --background: linear-gradient(90deg, var(--shadow-black), var(--shadow-blue) 10%, 
                     var(--night-blue), var(--shadow-blue) 90%, var(--shadow-black));
@@ -56,7 +57,7 @@ hr {
 
 h1 {
     color: var(--volcanic-blue);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Cinzel Decorative', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-transform: uppercase;
 }
 
@@ -118,7 +119,7 @@ input[type=text], input[type=password] {
 }
 
 input[type=submit] {
-    border: 2px solid var(--citrus-orange);
+    border: 2px outset var(--citrus-orange);
     background: linear-gradient(var(--citrus-orange) 10%, 
                 var(--sand-yellow), var(--citrus-orange) 90%);
     color: var(--shadow-black);
@@ -129,7 +130,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    border: 2px solid var(--amber-yellow);
+    border: inset var(--citrus-orange);
     background: linear-gradient(var(--burnt-orange) 10%, 
                 var(--amber-yellow), var(--burnt-orange) 90%);
 }
