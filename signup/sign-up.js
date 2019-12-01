@@ -40,7 +40,7 @@ $(function() {
         if(valid) field.msg = '';
 
         setMessage();
-
+        
         if(!valid) {
             field.el.css('border-color', 'var(--volcanic-red)');
             return true;
@@ -51,6 +51,7 @@ $(function() {
     }
 
     function setMessage() {
+        message.css('white-space', 'pre-wrap');
         message.text('');
         $.each(fields, function(i, val) {
             message.text(message.text()+val.msg);
