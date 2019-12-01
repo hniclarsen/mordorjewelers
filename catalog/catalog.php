@@ -6,8 +6,15 @@
     </head>
     <body>
         <?php require_once "../header-nav.php" ?>
-        <?php echo count(glob('products/*', GLOB_ONLYDIR));?>
         <div id="catalog-page" class="center">
+            <?php
+                if(isset($_SESSION['userPrivilege']) && $_SESSION['userPrivilege'] == 0) {
+                    echo '<form action="products/product-editor.php">
+                            <input type="submit" id="create-product" value="Create Product"/>
+                        </form>
+                    ';
+                }
+            ?>
             <form id="catalog-toolbar">
                 <h1>Catalog</h1>
                 <div id="searchbar">

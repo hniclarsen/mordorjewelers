@@ -1,0 +1,31 @@
+h1 {
+    text-align: center;
+}
+
+input, textarea {
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    float: right;
+    margin-bottom: 50px;
+}
+
+#img {
+    color: var(--dust-yellow);
+}
+
+#product-editor-page {
+    width: 35%;
+    margin: 50px auto;
+}
+
+#description {
+    height: 200px;
+    width: 95%;
+    resize: none;
+    border-radius: 5px;
+    padding: 2%;
+    background: var(--smoke-blue);
+    border: 2px solid var(--volcanic-blue);
+}

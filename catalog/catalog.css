@@ -61,3 +61,8 @@ h1 {
 #catalog-page-nums {
     margin: 10px auto 30px auto;
 }
+
+#create-product {
+    position: relative;
+    margin: 25px 47% 0;
+}

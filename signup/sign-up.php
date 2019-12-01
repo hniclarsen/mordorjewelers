@@ -3,7 +3,6 @@
     <head>
         <?php require_once "../global-head.php" ?>
         <link rel="stylesheet" type="text/css" href="/signup/sign-up.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="sign-up.js"></script>
     </head>
     <body>

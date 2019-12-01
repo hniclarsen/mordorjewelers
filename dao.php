@@ -82,5 +82,49 @@ class Dao {
             exit;
         }
     }
+
+    public function createProduct($name, $desc, $price, $imgs, $qty, $tags) {
+        $connection = $this->getConnection();
+        try {
+            $UUID = uniqid('', true);
+            $name = filter_var(trim($name), FILTER_SANITIZE_STRING);
+            $desc = filter_var(trim($desc), FILTER_SANITIZE_STRING);
+            $price = filter_var(trim($price), FILTER_SANITIZE_STRING);
+            $qty = filter_var(trim($qty), FILTER_SANITIZE_NUMBER_INT);
+            $urls = [];
+
+            for($i = 0; i < 6; ++$i) {
+                $imgs[i] = filter_var(trim($imgs[i]), FILTER_SANITIZE_URL);
+                $dest = '/catalog/products/product-imgs/';
+                $img = file_get_contents($imgs[i]);
+                $urls[i] = file_put_contents($dest.substr($imgs[i], strrpos($imgs[i], '/')), $img);
+            }
+            foreach($tags as &$tag) {
+                $tag = filter_var(trim($tag), FILTER_SANITIZE_STRING);
+            }
+
+            $query = "INSERT INTO products (productUUID, name, description, price, 
+                    image0, image1, image2, image3, image4, image5, quantity, tags)
+                    VALUES (:UUID, :name, :desc, :price, :img0, :img1, :img2, :img3, 
+                    :img4, :img5, :qty, :tags)";
+            $stmt = $connection->prepare($query);
+            $stmt->bindParam(":UUID", $UUID);
+            $stmt->bindParam(":name", $name);
+            $stmt->bindParam(":desc", $desc);
+            $stmt->bindParam(":img0", $urls[0]);
+            $stmt->bindParam(":img1", $urls[1]);
+            $stmt->bindParam(":img2", $urls[2]);
+            $stmt->bindParam(":img3", $urls[3]);
+            $stmt->bindParam(":img4", $urls[4]);
+            $stmt->bindParam(":img5", $urls[5]);
+            $stmt->bindParam(":qty", $qty);
+            $stmt->bindParam(":tags", $tags);
+
+            return $stmt->execute();
+        } catch(Exception $e) {
+            $this->logger->LogInfo("Product creation failed: {$e}");
+            exit;
+        }
+    }
 }
 ?>

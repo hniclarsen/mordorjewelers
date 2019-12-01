@@ -3,6 +3,7 @@
     <head>
         <?php require_once "../../global-head.php" ?>
         <link rel="stylesheet" type="text/css" href="product.css"/>
+        <script src="product.js"></script>
     </head>
     <body>
         <?php require_once "../../header-nav.php" ?>
@@ -10,12 +11,12 @@
             <div id="product">
                 <div id="product-imgs">
                     <div id="product-img-selection">
-                        <img class="quad-img"/>
-                        <img class="quad-img"/>
-                        <img class="quad-img"/>
-                        <img class="quad-img"/>
-                        <img class="quad-img"/>
-                        <img class="quad-img"/>
+                        <input type="image" id="img0" alt="img0" class="quad-img"/>
+                        <input type="image" id="img1" alt="img1" class="quad-img"/>
+                        <input type="image" id="img2" alt="img2" class="quad-img"/>
+                        <input type="image" id="img3" alt="img3" class="quad-img"/>
+                        <input type="image" id="img4" alt="img4" class="quad-img"/>
+                        <input type="image" id="img5" alt="img5" class="quad-img"/>
                     </div>
                     <img id="product-img-selected" class="quad-img"/>
                 </div>

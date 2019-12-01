@@ -7,4 +7,5 @@
 <link rel="stylesheet" type="text/css" href="/global.css"/>
 <link rel="stylesheet" type="text/css" href="/toast/toast.css"/>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="/toast/toast.js"></script>
