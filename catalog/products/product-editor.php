@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['userPrivilege']) || $_SESSION['userPrivilege'] !== '0') {
+        session_abort();
+        header("Location: /");
+    }
+    session_abort();
+?>
 <!DOCTYPE html>
 <html>
     <head>
