@@ -123,11 +123,49 @@ class Dao {
             $stmt->bindParam(":qty", $qty);
             $stmt->bindParam(":tags", $tags);
 
-            return $stmt->execute();
+            if($stmt->execute()) {
+                return $UUID;
+            } else {
+                return null;
+            }
         } catch(Exception $e) {
             $this->logger->LogInfo("Product creation failed: {$e}");
             exit;
         }
     }
+
+    public function getProduct($productUUID) {
+        $connection = $this->getConnection();
+        try {
+            $productUUID = filter_var(trim($productUUID), FILTER_SANITIZE_STRING);
+
+            $query = "SELECT * FROM products
+                    WHERE productUUID=?";
+            $stmt = $connection->prepare($query);
+            $stmt->execute([$productUUID]);
+   
+            $results = $stmt->fetchAll();
+            
+            return $results[0];
+        } catch(Exception $e) {
+            $this->logger->LogInfo("Failed to retrieve product: {$e}");
+            exit;
+        }
+    }
+
+    public function getProducts() {
+        $connection = $this->getConnection();
+        try {
+            $query = "SELECT * FROM products";
+            $stmt = $connection->prepare($query);
+            $stmt->execute();
+   
+            $results = $stmt->fetchAll();
+            
+            return $results;
+        } catch(Exception $e) {
+            $this->logger->LogInfo("Failed to retrieve products: {$e}");
+            exit;
+        }
+    }
 }
-?>

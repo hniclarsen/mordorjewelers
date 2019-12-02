@@ -24,92 +24,23 @@
                     <input type="button" value="Filter"/>
                 </div>
             </form>
-            <div id="products">
-                <div class="product">
-                    <img class="round-img"/>
-                    <div class="product-text">
-                        <div class="product-name">Product Name</div>
-                        <div class="product-price">Price</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img class="round-img"/>
-                    <div class="product-text">
-                        <div class="product-name">Product Name</div>
-                        <div class="product-price">Price</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img class="round-img"/>
-                    <div class="product-text">
-                        <div class="product-name">Product Name</div>
-                        <div class="product-price">Price</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img class="round-img"/>
-                    <div class="product-text">
-                        <div class="product-name">Product Name</div>
-                        <div class="product-price">Price</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img class="round-img"/>
-                    <div class="product-text">
-                        <div class="product-name">Product Name</div>
-                        <div class="product-price">Price</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img class="round-img"/>
-                    <div class="product-text">
-                        <div class="product-name">Product Name</div>
-                        <div class="product-price">Price</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img class="round-img"/>
-                    <div class="product-text">
-                        <div class="product-name">Product Name</div>
-                        <div class="product-price">Price</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img class="round-img"/>
-                    <div class="product-text">
-                        <div class="product-name">Product Name</div>
-                        <div class="product-price">Price</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img class="round-img"/>
-                    <div class="product-text">
-                        <div class="product-name">Product Name</div>
-                        <div class="product-price">Price</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img class="round-img"/>
-                    <div class="product-text">
-                        <div class="product-name">Product Name</div>
-                        <div class="product-price">Price</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img class="round-img"/>
-                    <div class="product-text">
-                        <div class="product-name">Product Name</div>
-                        <div class="product-price">Price</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img class="round-img"/>
-                    <div class="product-text">
-                        <div class="product-name">Product Name</div>
-                        <div class="product-price">Price</div>
-                    </div>
-                </div>
-            </div>
+            <div id="products"><?php            
+                require_once "../dao.php";
+                $dao = new Dao();
+                $products = $dao->getProducts();
+
+                foreach($products as $product) {
+                    $src = substr($product['image0'], strrpos($product['image0'], 'products'));
+                    echo "<a href='products/product.php?id={$product['productUUID']}'>
+                        <div class='product'><img class='round-img'";
+                    if($src) echo "src='{$src}'";
+                    echo "/><div class='product-text'>
+                            <div class='product-name'>{$product['name']}</div>
+                            <div class='product-price'>{$product['price']}</div>
+                        </div>
+                    </div></a>";
+                }
+            ?></div>
             <div id="catalog-page-nums" class="center">
                 <span class="catalog-page-num">1</span>
             </div>

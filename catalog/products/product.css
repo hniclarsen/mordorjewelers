@@ -82,6 +82,7 @@ button:hover {
     width: 230px;
     height: 500px;
     padding: 20px;
+    margin-bottom: 50px;
 }
 
 #related-items {
@@ -153,4 +154,8 @@ button:hover {
     width: 200px;
     border-radius: 15px;
     margin: 25px;
+}
+
+#description {
+    word-wrap: break-word;
 }

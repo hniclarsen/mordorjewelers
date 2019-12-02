@@ -32,8 +32,9 @@ if($errorCount == 0) {
     $dao = new Dao();
     $productCreated = $dao->createProduct($productName, $desc, $price, $imgs, $qty, $tags);
 
-    if($productCreated !== '' && $productCreated == true) {
+    if($productCreated) {
         $_SESSION['sentiment'] = "Product Creation Successful!";
+        header("Location: /catalog/products/product.php?id={$productCreated}");
     } else {
         $_SESSION['sentiment'] = "Product Creation Failed.";
         if($productName) $_SESSION['productName'] = $productName;
