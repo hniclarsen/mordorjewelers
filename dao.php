@@ -91,16 +91,18 @@ class Dao {
             $desc = filter_var(trim($desc), FILTER_SANITIZE_STRING);
             $price = filter_var(trim($price), FILTER_SANITIZE_STRING);
             $qty = filter_var(trim($qty), FILTER_SANITIZE_NUMBER_INT);
+            $tags = filter_var(trim($tags), FILTER_SANITIZE_STRING);
             $urls = [];
 
             for($i = 0; $i < 6; ++$i) {
-                $dest = '/catalog/products/product-imgs/';
+                if($i >= count($imgs['tmp_name']) || $imgs['tmp_name'][$i] == null) {
+                    $urls[$i] = null;
+                    continue;
+                }
+                $dest = $_SERVER['DOCUMENT_ROOT'].'/catalog/products/product-imgs/';
                 $img = file_get_contents($imgs['tmp_name'][$i]);
-                $urls[$i] = $dest.substr($imgs[$i], strrpos($imgs[$i], '/'));
+                $urls[$i] = $dest.$UUID.'-'.$i.substr($imgs['name'][$i], strrpos($imgs['name'][$i], '.'));
                 file_put_contents($urls[$i], $img);
-            }
-            foreach($tags as &$tag) {
-                $tag = filter_var(trim($tag), FILTER_SANITIZE_STRING);
             }
 
             $query = "INSERT INTO products (productUUID, name, description, price, 
@@ -111,6 +113,7 @@ class Dao {
             $stmt->bindParam(":UUID", $UUID);
             $stmt->bindParam(":name", $name);
             $stmt->bindParam(":desc", $desc);
+            $stmt->bindParam(":price", $price);
             $stmt->bindParam(":img0", $urls[0]);
             $stmt->bindParam(":img1", $urls[1]);
             $stmt->bindParam(":img2", $urls[2]);
