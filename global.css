@@ -130,7 +130,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    border: inset var(--citrus-orange);
+    border: 2px inset var(--citrus-orange);
     background: linear-gradient(var(--burnt-orange) 10%, 
                 var(--amber-yellow), var(--burnt-orange) 90%);
 }

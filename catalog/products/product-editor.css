@@ -29,3 +29,10 @@ input[type="submit"] {
     background: var(--smoke-blue);
     border: 2px solid var(--volcanic-blue);
 }
+
+#message {
+    color: var(--volcanic-red);
+    font-family: monospace;
+    margin: 20px auto;
+    text-align: center;
+}

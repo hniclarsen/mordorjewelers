@@ -93,11 +93,11 @@ class Dao {
             $qty = filter_var(trim($qty), FILTER_SANITIZE_NUMBER_INT);
             $urls = [];
 
-            for($i = 0; i < 6; ++$i) {
-                $imgs[i] = filter_var(trim($imgs[i]), FILTER_SANITIZE_URL);
+            for($i = 0; $i < 6; ++$i) {
                 $dest = '/catalog/products/product-imgs/';
-                $img = file_get_contents($imgs[i]);
-                $urls[i] = file_put_contents($dest.substr($imgs[i], strrpos($imgs[i], '/')), $img);
+                $img = file_get_contents($imgs['tmp_name'][$i]);
+                $urls[$i] = $dest.substr($imgs[$i], strrpos($imgs[$i], '/'));
+                file_put_contents($urls[$i], $img);
             }
             foreach($tags as &$tag) {
                 $tag = filter_var(trim($tag), FILTER_SANITIZE_STRING);
