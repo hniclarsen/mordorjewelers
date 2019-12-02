@@ -35,13 +35,6 @@ button:hover {
     margin-bottom: 25px;
 }
 
-.quad-img {
-    height: 50px;
-    width: 100%;
-    margin-bottom: 15px;
-    background: var(--slate-grey);
-}
-
 .purchasing-subtext {
     color: var(--ash-blue);
     font-size: var(--font-medium);

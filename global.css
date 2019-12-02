@@ -263,3 +263,19 @@ option {
     font-size: var(--font-xsmall);
     text-align: center;
 }
+
+.quad-img {
+    height: 50px;
+    width: 100%;
+    margin-bottom: 15px;
+    background: var(--slate-grey);
+}
+
+#cart-count {
+    background-color: var(--citrus-orange);
+    color: var(--shadow-black);
+    padding: 0 3px;
+    border-radius: 25px;
+    border: 1px solid var(--blood-red-0);
+    text-shadow: none;
+}
