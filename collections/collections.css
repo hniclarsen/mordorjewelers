@@ -54,6 +54,9 @@
 #collection-e {
     height: 25%;
     width: 100%;
+    margin: 0;
+    position: relative;
+    bottom: 15px;
 }
 
 #collection-f {

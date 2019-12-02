@@ -37,7 +37,7 @@
                 <li><a href="/cart/cart.php">
                     CART
                     <?php
-                        if($_COOKIE['CART']) {
+                        if(isset($_COOKIE['CART'])) {
                             $count = count(unserialize($_COOKIE['CART'], ["allowed_classes" => false]));
                             if($count > 0) echo '<span id="cart-count">'.$count.'</span>';
                         }

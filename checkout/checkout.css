@@ -1,0 +1,85 @@
+h2 {
+    color: var(--burnt-orange);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+}
+
+h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-large);
+    color: var(--smoke-blue);
+}
+
+label {
+    display: block;
+}
+
+.group {
+    display: inline-block;
+    margin-right: 50px;
+    margin-bottom: 15px;
+}
+
+.ord-right {
+    float: right;
+}
+
+#checkout-page {
+    width: 75%;
+    margin: 50px auto 100px;
+}
+
+#form-data {
+    width: 75%;
+}
+
+#first-name, #last-name, #addr1, #addr2, #city, #region, #country, #name-card, #cc-num {
+    width: 250px;
+}
+
+#zip {
+    width: 150px;
+}
+
+#ssc, #expr-yr {
+    width: 75px;
+}
+
+#expr-mo {
+    width: 50px;
+}
+
+#checkout-form {
+    position: absolute;
+    left: 72%;
+    top: 200px;
+    background-color: var(--night-blue);
+    border-radius: 5px;
+    height: fit-content;
+    width: 15%;
+    padding: 15px;
+}
+
+#checkout-button {
+    margin: 5% 8%;
+    height: 50px;
+    width: 85%;
+}
+
+#order-data {
+    margin: 0 25px;
+}
+
+#itm-price-hdr {
+    color: var(--ash-blue);
+    font-size: var(--font-medium);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#order-total {
+    color: var(--blood-red-0);
+    font-size: var(--font-large);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
