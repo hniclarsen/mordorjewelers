@@ -12,8 +12,7 @@
                 if(isset($_SESSION['sentiment'])) {
                     echo nl2br($_SESSION['sentiment']);
                     unset($_SESSION['sentiment']);
-                    echo "<script>showToast({$_SESSION['sentiment_validity']});</script>";
-                    unset($_SESSION['sentiment_validity']);
+                    echo "<script>showToast('valid');</script>";
                 };
             ?>
         </div>
@@ -90,7 +89,7 @@
                         ?></p>
                     </div>
                 </div>
-                <form action="" method="post" id="purchasing-options">
+                <form action=<?php echo "purchase-handler.php?id={$product['productUUID']}"?> method="post" id="purchasing-options">
                     <div id="price"><?php
                         if($product && $product['price']) echo $product['price'];
                         else echo 'Price';
@@ -101,9 +100,9 @@
                     ?></div>
                     <label for="qty" class="purchasing-subtext">Qty:</label>
                         <input id="qty" name="qty" type="text" value="1"/>
-                    <button type="button" id="add-cart">Add to Cart</button>
-                    <button type="button" id="buy-now">Buy Now</button>
-                    <button type="button" id="add-wishlist">Add to Wishlist</button>
+                    <button type="submit" id="add-cart" name="add-cart">Add to Cart</button>
+                    <button type="submit" id="buy-now" name="buy-now">Buy Now</button>
+                    <button type="submit" id="add-wishlist" name="add-wishlist">Add to Wishlist</button>
                 </form>
             </div>
         </div>

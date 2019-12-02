@@ -90,6 +90,7 @@ button:hover {
     font-size: var(--font-large);
     font-family: 'Cinzel Decorative', Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
+    padding: 0 5%;
 }
 
 #product {
