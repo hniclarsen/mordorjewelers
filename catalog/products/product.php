@@ -12,7 +12,8 @@
                 if(isset($_SESSION['sentiment'])) {
                     echo nl2br($_SESSION['sentiment']);
                     unset($_SESSION['sentiment']);
-                    echo "<script>showToast('valid');</script>";
+                    echo "<script>showToast({$_SESSION['sentiment_validity']});</script>";
+                    unset($_SESSION['sentiment_validity']);
                 };
             ?>
         </div>
@@ -80,9 +81,12 @@
                         echo 'Product ID#';
                         if($product && $product['productUUID']) echo $product['productUUID'];
                     ?></h2>
-                    <div id="description">
-                        <p class="descriptive-text"><?php
-                            if($product && $product['description']) echo $product['description'];
+                    <div id="description" class="descriptive-text">
+                        <p><?php
+                            if($product && $product['description']) {
+                                $desc = str_replace('\n', '</p><p>', $product['description']);
+                                echo $desc;
+                            }
                         ?></p>
                     </div>
                 </div>
