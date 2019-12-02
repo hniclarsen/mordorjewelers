@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php require_once "../header-nav.php" ?>
-        <form action="" method="post" id="checkout-page" class="center">
+        <form action="checkout-handler.php" method="post" id="checkout-page" class="center">
             <div id="form-data">
                 <h1>Check Out</h1>
                 <hr/>
@@ -74,10 +74,26 @@
                         <span class="ord-left">Items:</span>
                         <span class="ord-right">Price</span>
                     </div>
+                    <div id="itms"><?php
+                        $subtotal = '0.00';
+                        if(isset($_COOKIE['CART'])) {
+                            require_once "../dao.php";
+                            $dao = new Dao();
+                            $cart = unserialize($_COOKIE['CART'], ["allowed_classes" => false]);
+    
+                            foreach(array_keys($cart) as $productUUID) {
+                                $product = $dao->getProduct($productUUID);
+                                $price = $product['price']*$cart[$productUUID];
+                                echo '<span class="ord-left">'.$product['name'].' (x'.$cart[$productUUID].')</span>';
+                                echo '<span class="ord-right">'.$price.'</span>';
+                                $subtotal += $price;
+                            }
+                        }
+                    ?></div>
                     <hr/>
                     <div id="order-total">
                         <span class="ord-left">Order Total:</span>
-                        <span class="ord-right">Price</span>
+                        <span class="ord-right"><?= $subtotal ?></span>
                     </div>
                 </div>
             </div>
