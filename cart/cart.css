@@ -11,6 +11,10 @@ h2 {
     font-size: var(--font-large);
 }
 
+a:hover {
+    color: var(--wraith-white);
+}
+
 .product-img {
     height: 150px;
     width: 150px;
@@ -80,21 +84,21 @@ h2 {
     font-size: var(--font-small);
 }
 
-#cart-page {
-    width: 60%;
-    margin-bottom: 100px;
-}
-
-#sum-price {
+.sum-price {
     float: right;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: var(--font-large);
 }
 
-#subtotal {
+.subtotal {
     color: var(--ash-blue);
 }
 
-#total-price {
+.total-price {
     color: var(--citrus-orange);
+}
+
+#cart-page {
+    width: 60%;
+    margin-bottom: 100px;
 }

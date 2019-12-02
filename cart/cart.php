@@ -48,7 +48,9 @@
                         if($cart[$productUUID]) echo $cart[$productUUID];
                         echo '</span>
                                 <span class="opts">|</span>
-                                <span class="opts">Delete</span>
+                                <span class="opts"><a href="delete-item-handler.php?id='.$productUUID.'">
+                                    Delete 
+                                </a></span>
                                 <span class="opts">|</span>
                                 <span class="opts">Add to Wishlist</span>
                             </div>
@@ -58,9 +60,9 @@
                     }
                 }
             ?>
-            <div id="sum-price">
-                <span id="subtotal">Subtotal:</span>
-                <span id="total-price"><?= $subtotal ?></span>
+            <div class="sum-price">
+                <span class="subtotal">Subtotal:</span>
+                <span class="total-price"><?= $subtotal ?></span>
             </div>
         </div>
         <?php require_once "../footer.html" ?>
