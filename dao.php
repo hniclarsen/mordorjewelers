@@ -99,22 +99,10 @@ class Dao {
                     $urls[$i] = null;
                     continue;
                 }
-                // For uploading locally to the file system
-                // $dest = $_SERVER['DOCUMENT_ROOT'].'/catalog/products/product-imgs/';
-                // $img = file_get_contents($imgs['tmp_name'][$i]);
-                // $urls[$i] = $dest.$UUID.'-'.$i.substr($imgs['name'][$i], strrpos($imgs['name'][$i], '.'));
-                // file_put_contents($urls[$i], $img);
-                //
-                // For uploading to heroku AWS storage
-                require_once 'catalog/products/product-imgs/aws-autoloader.php';
-                
-                $s3 = new Aws\S3\S3Client([
-                    'version' => '2006-03-01',
-                    'region'  => 'us-east-1',
-                ]);
-                $bucket = getenv('S3_BUCKET')?: die('Cloud storage configuration invalid');
-                $urls[$i] = $s3->upload($bucket, $imgs['userfile']['name'], fopen($imgs['userfile']['tmp_name'], 'rb'), 'public-read');
-                //
+                $dest = $_SERVER['DOCUMENT_ROOT'].'/catalog/products/product-imgs/';
+                $img = file_get_contents($imgs['tmp_name'][$i]);
+                $urls[$i] = $dest.$UUID.'-'.$i.substr($imgs['name'][$i], strrpos($imgs['name'][$i], '.'));
+                file_put_contents($urls[$i], $img);
             }
 
             $query = "INSERT INTO products (productUUID, name, description, price, 
