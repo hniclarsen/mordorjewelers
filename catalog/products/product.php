@@ -55,41 +55,13 @@ if(isset($_COOKIE['VIEWED_ITEM'])) {
             <div id="product">
                 <div id="product-imgs">
                     <div id="product-img-selection"><?php
-                        if($product && $product['image0']) {
-                            $src = substr($product['image0'], strrpos($product['image0'], 'product-imgs'));
-                            echo "<input type='image' 
-                                id='img0' alt='img0' class='quad-img'
-                                src='{$src}'/>";
-                        }
-                        if($product && $product['image1']) {
-                            $src = substr($product['image1'], strrpos($product['image1'], 'product-imgs'));
-                            echo "<input type='image' 
-                                id='img1' alt='img1' class='quad-img'
-                                src='{$src}'/>";
-                        }
-                        if($product && $product['image2']) {
-                            $src = substr($product['image2'], strrpos($product['image2'], 'product-imgs'));
-                            echo "<input type='image' 
-                                id='img2' alt='img2' class='quad-img'
-                                src='{$src}'/>";
-                        }
-                        if($product && $product['image3']) {
-                            $src = substr($product['image3'], strrpos($product['image3'], 'product-imgs'));
-                            echo "<input type='image' 
-                                id='img3' alt='img3' class='quad-img'
-                                src='{$src}'/>";
-                        }
-                        if($product && $product['image4']) {
-                            $src = substr($product['image4'], strrpos($product['image4'], 'product-imgs'));
-                            echo "<input type='image' 
-                                id='img4' alt='img4' class='quad-img'
-                                src='{$src}'/>";
-                        }
-                        if($product && $product['image5']) {
-                            $src = substr($product['image5'], strrpos($product['image5'], 'product-imgs'));
-                            echo "<input type='image' 
-                                id='img5' alt='img5' class='quad-img'
-                                src='{$src}'/>";
+                        for($i = 0; $i < 5; ++$i) {
+                            if($product && $product["image{$i}"]) {
+                                $src = substr($product["image{$i}"], strrpos($product["image{$i}"], 'product-imgs'));
+                                echo "<input type='image' 
+                                    id='img{$i}' alt='img{$i}' class='quad-img'
+                                    src='{$src}'/>";
+                            }
                         }
                     ?></div>
                     <?php
@@ -141,97 +113,28 @@ if(isset($_COOKIE['VIEWED_ITEM'])) {
             <div id="related-items">
                 <span>Recommended Items</span>
                 <div id="related-imgs">
-                    <div class="group"><?php
-                        if(isset($viewedItems[1])) {
-                            if(isset(array_keys($viewedItems[1])[0]) && array_keys($viewedItems[1])[0] != $_GET['id']) {
-                                $item = $dao->getProduct(array_keys($viewedItems[1])[0]);
-                                echo "<a href='product.php?id={$item['productUUID']}'>";
-                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
-                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
-                                else echo '<img class="quad-img"/>';
-                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
-                            } else if(isset($viewedItems[0]) && isset(array_keys($viewedItems[0])[0])) {
-                                $item = $dao->getProduct(array_keys($viewedItems[0])[0]);
-                                echo "<a href='product.php?id={$item['productUUID']}'>";
-                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
-                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
-                                else echo '<img class="quad-img"/>';
-                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
-                            } else echo '<img class="quad-img"/>';
-                        } else echo '<img class="quad-img"/>';
-                    ?></div><div class="group"><?php
-                        if(isset($viewedItems[2])) {
-                            if(isset(array_keys($viewedItems[2])[0]) && array_keys($viewedItems[2])[0] != $_GET['id']) {
-                                $item = $dao->getProduct(array_keys($viewedItems[2])[0]);
-                                echo "<a href='product.php?id={$item['productUUID']}'>";
-                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
-                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
-                                else echo '<img class="quad-img"/>';
-                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
-                            } else if(isset($viewedItems[0]) && isset(array_keys($viewedItems[0])[0])) {
-                                $item = $dao->getProduct(array_keys($viewedItems[0])[0]);
-                                echo "<a href='product.php?id={$item['productUUID']}'>";
-                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
-                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
-                                else echo '<img class="quad-img"/>';
-                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
-                            } else echo '<img class="quad-img"/>';
-                        } else echo '<img class="quad-img"/>';
-                    ?></div><div class="group"><?php
-                        if(isset($viewedItems[3])) {
-                            if(isset(array_keys($viewedItems[3])[0]) && array_keys($viewedItems[3])[0] != $_GET['id']) {
-                                $item = $dao->getProduct(array_keys($viewedItems[3])[0]);
-                                echo "<a href='product.php?id={$item['productUUID']}'>";
-                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
-                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
-                                else echo '<img class="quad-img"/>';
-                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
-                            } else if(isset($viewedItems[0]) && isset(array_keys($viewedItems[0])[0])) {
-                                $item = $dao->getProduct(array_keys($viewedItems[0])[0]);
-                                echo "<a href='product.php?id={$item['productUUID']}'>";
-                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
-                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
-                                else echo '<img class="quad-img"/>';
-                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
-                            } else echo '<img class="quad-img"/>';
-                        } else echo '<img class="quad-img"/>';
-                    ?></div><div class="group"><?php
-                        if(isset($viewedItems[4])) {
-                            if(isset(array_keys($viewedItems[4])[0]) && array_keys($viewedItems[4])[0] != $_GET['id']) {
-                                $item = $dao->getProduct(array_keys($viewedItems[4])[0]);
-                                echo "<a href='product.php?id={$item['productUUID']}'>";
-                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
-                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
-                                else echo '<img class="quad-img"/>';
-                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
-                            } else if(isset($viewedItems[0]) && isset(array_keys($viewedItems[0])[0])) {
-                                $item = $dao->getProduct(array_keys($viewedItems[0])[0]);
-                                echo "<a href='product.php?id={$item['productUUID']}'>";
-                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
-                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
-                                else echo '<img class="quad-img"/>';
-                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
-                            } else echo '<img class="quad-img"/>';
-                        } else echo '<img class="quad-img"/>';
-                    ?></div><div class="group"><?php
-                        if(isset($viewedItems[5])) {
-                            if(isset(array_keys($viewedItems[5])[0]) && array_keys($viewedItems[5])[0] != $_GET['id']) {
-                                $item = $dao->getProduct(array_keys($viewedItems[5])[0]);
-                                echo "<a href='product.php?id={$item['productUUID']}'>";
-                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
-                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
-                                else echo '<img class="quad-img"/>';
-                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
-                            } else if(isset($viewedItems[0]) && isset(array_keys($viewedItems[0])[0])) {
-                                $item = $dao->getProduct(array_keys($viewedItems[0])[0]);
-                                echo "<a href='product.php?id={$item['productUUID']}'>";
-                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
-                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
-                                else echo '<img class="quad-img"/>';
-                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
-                            } else echo '<img class="quad-img"/>';
-                        } else echo '<img class="quad-img"/>';
-                    ?></div>
+                    <?php
+                        for($i = 0; $i < 5; ++$i) {
+                            echo '<div class="group">';
+                            if(isset($viewedItems[$i])) {
+                                if(isset(array_keys($viewedItems[$i])[0]) && array_keys($viewedItems[$i])[0] != $_GET['id']) {
+                                    $item = $dao->getProduct(array_keys($viewedItems[$i])[0]);
+                                    echo "<a href='product.php?id={$item['productUUID']}'>";
+                                    $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
+                                    if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
+                                    else echo '<img class="quad-img"/>';
+                                    echo "<div class='rec-item-name'>{$item['name']}</div></a></div>";
+                                } else if(isset($viewedItems[0]) && isset(array_keys($viewedItems[0])[0])) {
+                                    $item = $dao->getProduct(array_keys($viewedItems[0])[0]);
+                                    echo "<a href='product.php?id={$item['productUUID']}'>";
+                                    $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
+                                    if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
+                                    else echo '<img class="quad-img"/>';
+                                    echo "<div class='rec-item-name'>{$item['name']}</div></a></div>";
+                                } else echo '<img class="quad-img"/>';
+                            } else echo '<img class="quad-img"/></div>';
+                        }
+                    ?>
                 </div>
             </div>
         </div>
