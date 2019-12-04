@@ -6,6 +6,15 @@
     </head>
     <body>
         <?php require_once "../header-nav.php" ?>
+        <div id="toast">
+            <?php
+                if(isset($_SESSION['sentiment'])) {
+                    echo nl2br($_SESSION['sentiment']);
+                    unset($_SESSION['sentiment']);
+                    echo "<script>showToast('valid');</script>";
+                };
+            ?>
+        </div>
         <div id="orders-page" class="center">
             <h1>Orders</h1>
             <hr/>

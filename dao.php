@@ -226,4 +226,20 @@ class Dao {
             exit;
         }
     }
+
+    public function createOrder($userUUID, $products) {
+        $connection = $this->getConnection();
+        try {
+            $query = "INSERT INTO orders (userUUID, products)
+                VALUES (:userUUID, :products)";
+            $stmt = $connection->prepare($query);
+            $stmt->bindParam(":userUUID", $userUUID);
+            $stmt->bindParam(":products", $products);
+            
+            return $stmt->execute();
+        } catch(Exception $e) {
+            $this->logger->LogInfo("Failed to submit order: {$e}");
+            exit;   
+        }
+    }
 }
