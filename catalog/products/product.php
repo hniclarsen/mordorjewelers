@@ -37,6 +37,7 @@ if(isset($_COOKIE['VIEWED_ITEM'])) {
     </head>
     <body>
         <?php require_once "../../header-nav.php" ?>
+        <?php print_r($_COOKIE['VIEWED_ITEM']); ?>
         <div id="toast">
             <?php
                 if(isset($_SESSION['sentiment'])) {
@@ -114,7 +115,7 @@ if(isset($_COOKIE['VIEWED_ITEM'])) {
                 <span>Recommended Items</span>
                 <div id="related-imgs">
                     <?php
-                        for($i = 0; $i < 5; ++$i) {
+                        for($i = 1; $i < 6; ++$i) {
                             echo '<div class="group">';
                             if(isset($viewedItems[$i])) {
                                 if(isset(array_keys($viewedItems[$i])[0]) && array_keys($viewedItems[$i])[0] != $_GET['id']) {
