@@ -37,7 +37,7 @@
                                 <div class="product-price">';
                             if($product['price']) {
                                 $price = $product['price']*$cart[$productUUID];
-                                echo $price;
+                                echo number_format($price,2);
                                 $subtotal += $price;
                             }
                             else echo 'Price';
@@ -64,13 +64,13 @@
                 ?>
                 <div class="sum-price">
                     <span class="subtotal">Subtotal:</span>
-                    <span class="total-price"><?= $subtotal ?></span>
+                    <span class="total-price"><?= number_format($subtotal,2) ?></span>
                 </div>
             </div>
             <form action="/checkout/checkout.php" method="post" id="checkout-form">
                 <div class="sum-price">
                     <span class="subtotal">Subtotal:</span>
-                    <span class="total-price"><?= $subtotal ?></span>
+                    <span class="total-price"><?= number_format($subtotal,2) ?></span>
                 </div>
                 <input type="submit" value="Proceed to Checkout" id="checkout-button"/>
             </form>

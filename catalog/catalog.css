@@ -23,6 +23,7 @@ h1 {
 
 .product-name {
     font-size: var(--font-medium);
+    overflow: hidden;
 }
 
 .product-price {

@@ -1,3 +1,33 @@
+<?php
+$item[$_GET["id"]] = date("H:i:s-Y-m-d");
+    
+if(isset($_COOKIE['VIEWED_ITEM'])) {
+    $viewedItems = unserialize($_COOKIE['VIEWED_ITEM'], ["allowed_classes" => false]);
+    $numItems = count($viewedItems);
+    $set = false;
+
+    for($i = 0; $i < $numItems; ++$i ) {
+        if(array_keys($viewedItems[$i])[0] == $_GET["id"]) {
+            $set = true;
+            break;
+        }
+    }
+
+    if(!$set) {        
+        if($numItems < 6) $i = $numItems;
+        else $i = 5;
+        
+        for($i; $i > 0; --$i) {
+            $viewedItems[$i] = $viewedItems[$i-1];
+        }
+        $viewedItems[0] = $item;
+        setcookie('VIEWED_ITEM', serialize($viewedItems), time()+60*60*24*30, "/");
+    }
+} else {
+    $viewedItems[0] = $item;
+    setcookie('VIEWED_ITEM', serialize($viewedItems), time()+60*60*24*30, "/");
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -91,7 +121,7 @@
                 </div>
                 <form action=<?php echo "purchase-handler.php?id={$product['productUUID']}"?> method="post" id="purchasing-options">
                     <div id="price"><?php
-                        if($product && $product['price']) echo $product['price'];
+                        if($product && $product['price']) echo number_format($product['price'],2);
                         else echo 'Price';
                     ?></div>
                     <div id="availability" class="purchasing-subtext"><?php
@@ -109,13 +139,64 @@
         <hr/>
         <div class="product-page bottom">
             <div id="related-items">
-                <span>Related Items</span>
+                <span>Recommended Items</span>
                 <div id="related-imgs">
-                    <img class="quad-img"/>
-                    <img class="quad-img"/>
-                    <img class="quad-img"/>
-                    <img class="quad-img"/>
-                    <img class="quad-img"/>
+                    <div class="group"><?php
+                        if(isset($viewedItems[1])) {
+                            if(isset(array_keys($viewedItems[1])[0])) {
+                                $item = $dao->getProduct(array_keys($viewedItems[1])[0]);
+                                echo "<a href='product.php?id={$item['productUUID']}'>";
+                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
+                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
+                                else echo '<img class="quad-img"/>';
+                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
+                            }
+                        } else echo '<img class="quad-img"/>';
+                    ?></div><div class="group"><?php
+                        if(isset($viewedItems[2])) {
+                            if(isset(array_keys($viewedItems[2])[0])) {
+                                $item = $dao->getProduct(array_keys($viewedItems[2])[0]);
+                                echo "<a href='product.php?id={$item['productUUID']}'>";
+                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
+                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
+                                else echo '<img class="quad-img"/>';
+                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
+                            }
+                        } else echo '<img class="quad-img"/>';
+                    ?></div><div class="group"><?php
+                        if(isset($viewedItems[3])) {
+                            if(isset(array_keys($viewedItems[3])[0])) {
+                                $item = $dao->getProduct(array_keys($viewedItems[3])[0]);
+                                echo "<a href='product.php?id={$item['productUUID']}'>";
+                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
+                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
+                                else echo '<img class="quad-img"/>';
+                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
+                            }
+                        } else echo '<img class="quad-img"/>';
+                    ?></div><div class="group"><?php
+                        if(isset($viewedItems[4])) {
+                            if(isset(array_keys($viewedItems[4])[0])) {
+                                $item = $dao->getProduct(array_keys($viewedItems[4])[0]);
+                                echo "<a href='product.php?id={$item['productUUID']}'>";
+                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
+                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
+                                else echo '<img class="quad-img"/>';
+                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
+                            }
+                        } else echo '<img class="quad-img"/>';
+                    ?></div><div class="group"><?php
+                        if(isset($viewedItems[5])) {
+                            if(isset(array_keys($viewedItems[5])[0])) {
+                                $item = $dao->getProduct(array_keys($viewedItems[5])[0]);
+                                echo "<a href='product.php?id={$item['productUUID']}'>";
+                                $itemSrc = substr($item['image0'], strrpos($item['image0'], 'product-imgs'));
+                                if($itemSrc) echo "<img class='quad-img' src='{$itemSrc}'/>";
+                                else echo '<img class="quad-img"/>';
+                                echo "<div class='rec-item-name'>{$item['name']}</div></a>";
+                            }
+                        } else echo '<img class="quad-img"/>';
+                    ?></div>
                 </div>
             </div>
         </div>

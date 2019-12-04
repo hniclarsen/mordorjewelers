@@ -57,7 +57,7 @@
                     </div>
                     <div class="group">
                         <label for="ssc">Security Code</label>
-                            <input type="text" id="ssc" name="ssc" placeholder="Security Code"/>
+                            <input type="text" id="ssc" name="ssc" placeholder="Code"/>
                     </div>
                     <div class="group">
                         <label for="expr-mo">Expiration Date</label>
@@ -84,8 +84,8 @@
                             foreach(array_keys($cart) as $productUUID) {
                                 $product = $dao->getProduct($productUUID);
                                 $price = $product['price']*$cart[$productUUID];
-                                echo '<span class="ord-left">'.$product['name'].' (x'.$cart[$productUUID].')</span>';
-                                echo '<span class="ord-right">'.$price.'</span>';
+                                echo '<div><span class="ord-left">'.$product['name'].' (x'.$cart[$productUUID].')</span>';
+                                echo '<span class="ord-right">'.number_format($price,2).'</span></div>';
                                 $subtotal += $price;
                             }
                         }
@@ -93,7 +93,7 @@
                     <hr/>
                     <div id="order-total">
                         <span class="ord-left">Order Total:</span>
-                        <span class="ord-right"><?= $subtotal ?></span>
+                        <span class="ord-right"><?= number_format($subtotal,2) ?></span>
                     </div>
                 </div>
             </div>

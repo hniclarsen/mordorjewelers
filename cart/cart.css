@@ -123,9 +123,11 @@ a:hover {
 }
 
 #checkout-form .sum-price {
-    font-size: var(--font-xlarge);
-    margin: 2% 11% 0;
+    position: relative;
+    margin: 2% auto 0;
     text-overflow: ellipsis;
+    width: 100%;
+    text-align: center;
 }
 
 #checkout-button {

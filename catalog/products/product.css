@@ -1,6 +1,7 @@
 h1 {
     margin-top: -5px;
     margin-bottom: 10px;
+    word-wrap: break-word;
 }
 
 h2 {
@@ -40,6 +41,24 @@ button:hover {
     font-size: var(--font-medium);
     font-family: monospace;
     margin: 20px 0;
+}
+
+.rec-item-name {
+    width: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    color: var(--wraith-white);
+    font-size: var(--font-medium);
+    font-style: normal;
+}
+
+.quad-img {
+    margin-bottom: 5px !important;
+}
+
+.group {
+    display: inline-block;
 }
 
 #product-information {
@@ -93,7 +112,7 @@ button:hover {
 #price {
     color: var(--burnt-orange);
     font-size: var(--font-xxlarge);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;;
 }
 
 #qty {
