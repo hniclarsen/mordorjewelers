@@ -37,7 +37,6 @@ if(isset($_COOKIE['VIEWED_ITEM'])) {
     </head>
     <body>
         <?php require_once "../../header-nav.php" ?>
-        <?php print_r($_COOKIE['VIEWED_ITEM']); ?>
         <div id="toast">
             <?php
                 if(isset($_SESSION['sentiment'])) {

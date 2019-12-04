@@ -127,6 +127,7 @@ input[type=submit] {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     width: fit-content;
+    cursor: pointer;
 }
 
 input[type=submit]:hover {
@@ -209,6 +210,7 @@ option {
     border-radius: 50%;
     height: calc(100% - 50px);
     width: 100%;
+    border: 2px solid var(--smoke-grey);
 }
 
 .box-img {
@@ -216,6 +218,7 @@ option {
     border-radius: 5px;
     height: calc(100% - 50px);
     width: 100%;
+    border: 2px solid var(--smoke-grey);
 }
 
 .item-text {
@@ -269,6 +272,7 @@ option {
     width: 100%;
     margin-bottom: 15px;
     background: var(--slate-grey);
+    border: 2px solid var(--smoke-grey);
 }
 
 #cart-count {
