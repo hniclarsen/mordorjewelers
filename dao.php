@@ -168,4 +168,62 @@ class Dao {
             exit;
         }
     }
+
+    public function addWishlist($userUUID, $productUUID) {
+        $connection = $this->getConnection();
+        try {
+            // check if already added to wishlist
+            $query = "SELECT COUNT(*) as itemCount FROM wishlist
+                    WHERE productUUID=?";
+            $stmt = $connection->prepare($query);
+            $stmt->execute([$productUUID]);
+
+            $count = $stmt->fetchAll();
+            if(($count[0]['itemCount']) > 0) return false;
+
+            $query = "INSERT INTO wishlist (userUUID, productUUID)
+                    VALUES (:userUUID, :productUUID)";
+            $stmt = $connection->prepare($query);
+            $stmt->bindParam(":userUUID", $userUUID);
+            $stmt->bindParam(":productUUID", $productUUID);
+
+            return $stmt->execute();
+        } catch(Exception $e) {
+            $this->logger->LogInfo("Failed to add to wishlist: {$e}");
+            exit;
+        }
+    }
+
+    public function getWishlist($userUUID) {
+        $connection = $this->getConnection();
+        try {
+            $query = "SELECT * FROM wishlist";
+            $stmt = $connection->prepare($query);
+            $stmt->execute();
+   
+            $results = $stmt->fetchAll();
+            
+            return $results;
+        } catch(Exception $e) {
+            $this->logger->LogInfo("Failed to retrieve wishlist: {$e}");
+            exit;
+        }
+    }
+
+    public function deleteWishlistItem($userUUID, $productUUID) {
+        $connection = $this->getConnection();
+        try {
+            $query = "DELETE FROM wishlist
+                        WHERE userUUID=:userUUID
+                        AND productUUID=:productUUID";
+            $stmt = $connection->prepare($query);
+            $stmt->bindParam(":userUUID", $userUUID);
+            $stmt->bindParam(":productUUID", $productUUID);
+            
+            return $stmt->execute();
+        } catch(Exception $e) {
+            $this->logger->LogInfo("Failed to retrieve wishlist: {$e}");
+            exit;
+        }
+    }
 }

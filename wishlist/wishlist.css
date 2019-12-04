@@ -1,6 +1,7 @@
 .wishlist-item {
-    margin: 20px 5%;
+    margin: 20px 20px;
     display: inline-block;
+    width: 400px;
 }
 
 .wishlist-item-image {
@@ -12,18 +13,26 @@
     color: var(--amber-yellow);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: var(--font-xlarge);
-    text-align: center;
+    display: inline-block;
+    margin-bottom: 15px;
 }
 
 .wishlist-item-price {
     color: var(--volcanic-red);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: var(--font-large);
-    text-align: center;
+    margin-bottom: 25px;
+}
+
+.wishlist-item-info {
+    display: inline-block;
+    margin-left: 15px;
+    position: absolute;
 }
 
 #wishlist-items {
-    margin: 0 9%;
+    margin: 0 auto;
+    width: 1350px;
 }
 
 #wishlist-page {
@@ -33,4 +42,17 @@
 
 #wishlist-page h1 {
     margin-bottom: 40px;
+}
+
+#add-cart-button {
+    margin-bottom: 25px;
+}
+
+#delete-item {
+    color: var(--ash-blue);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#delete-item:hover {
+    color: var(--wraith-white); 
 }

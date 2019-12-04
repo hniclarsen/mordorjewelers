@@ -55,4 +55,13 @@ if(isset($_POST['buy-now'])) {
     header("Location: /cart/cart.php");
 }
 
-if(isset($_POST['add-wishlist'])) print_r("add wishlist<br/>");
+if(isset($_POST['add-wishlist'])) {
+    require_once '../../dao.php';
+    $dao = new Dao();
+    
+    if($dao->addWishlist($_SESSION['userUUID'], $_GET["id"])) {
+        $_SESSION['sentiment'] = "Product successfully added to wishlist.";    
+    }
+    
+    header("Location: /catalog/products/product.php?id={$_GET["id"]}");
+}

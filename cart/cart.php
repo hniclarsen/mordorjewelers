@@ -6,6 +6,15 @@
     </head>
     <body>
         <?php require_once "../header-nav.php" ?>
+        <div id="toast">
+            <?php
+                if(isset($_SESSION['sentiment'])) {
+                    echo nl2br($_SESSION['sentiment']);
+                    unset($_SESSION['sentiment']);
+                    echo "<script>showToast('valid');</script>";
+                };
+            ?>
+        </div>
         <div id="cart-page" class="center">
             <div id="items">
                 <h1>Shopping Cart</h1>
@@ -25,7 +34,8 @@
                                     <img class="quad-img"';
                             if($product['image0']) {
                                 $src = substr($product['image0'], strrpos($product['image0'], 'catalog'));
-                                echo "src='../{$src}'";
+                                //echo "src='../{$src}'";
+                                echo "src='{$src}'";
                             };
                             echo '/>
                                 </a></div>
@@ -54,7 +64,9 @@
                                         Delete 
                                     </a></span>
                                     <span class="opts">|</span>
-                                    <span class="opts">Add to Wishlist</span>
+                                    <span class="opts"><a href="add-wishlist-handler.php?id='.$productUUID.'">
+                                        Add to Wishlist
+                                    </a></span>
                                 </div>
                                 </div>
                                 </div>
