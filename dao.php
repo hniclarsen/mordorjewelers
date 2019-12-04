@@ -2,10 +2,10 @@
 require_once "logger.php";
 
 class Dao {
-    private $host = "localhost";//"us-cdbr-iron-east-05.cleardb.net";
-    private $db = "mordor_jewelers";//"heroku_2f960b6202ae0cc";
-    private $user = "root";//"b57997f748d7a0";
-    private $pass = "";//"d1b50197";
+    private $host = "us-cdbr-iron-east-05.cleardb.net";
+    private $db = "heroku_2f960b6202ae0cc";
+    private $user = "b57997f748d7a0";
+    private $pass = "d1b50197";
     private $logger;
 
     public function __construct() {
@@ -99,10 +99,22 @@ class Dao {
                     $urls[$i] = null;
                     continue;
                 }
-                $dest = $_SERVER['DOCUMENT_ROOT'].'/catalog/products/product-imgs/';
-                $img = file_get_contents($imgs['tmp_name'][$i]);
-                $urls[$i] = $dest.$UUID.'-'.$i.substr($imgs['name'][$i], strrpos($imgs['name'][$i], '.'));
-                file_put_contents($urls[$i], $img);
+                // For uploading locally to the file system
+                // $dest = $_SERVER['DOCUMENT_ROOT'].'/catalog/products/product-imgs/';
+                // $img = file_get_contents($imgs['tmp_name'][$i]);
+                // $urls[$i] = $dest.$UUID.'-'.$i.substr($imgs['name'][$i], strrpos($imgs['name'][$i], '.'));
+                // file_put_contents($urls[$i], $img);
+                //
+                // For uploading to heroku AWS storage
+                require_once 'catalog/products/product-imgs/aws-autoloader.php';
+                
+                $s3 = new Aws\S3\S3Client([
+                    'version' => '2006-03-01',
+                    'region'  => 'us-east-1',
+                ]);
+                $bucket = getenv('S3_BUCKET')?: die('Cloud storage configuration invalid');
+                $urls[$i] = $s3->upload($bucket, $imgs['userfile']['name'], fopen($imgs['userfile']['tmp_name'], 'rb'), 'public-read');
+                //
             }
 
             $query = "INSERT INTO products (productUUID, name, description, price, 
