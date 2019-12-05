@@ -88,6 +88,7 @@
                                 echo '<span class="ord-right">'.number_format($price,2).'</span></div>';
                                 $subtotal += $price;
                             }
+                            $_SESSION['checkoutTotal'] = $subtotal;
                         }
                     ?></div>
                     <hr/>

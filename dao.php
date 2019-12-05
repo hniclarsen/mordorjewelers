@@ -227,19 +227,41 @@ class Dao {
         }
     }
 
-    public function createOrder($userUUID, $products) {
+    public function createOrder($userUUID, $products, $total) {
         $connection = $this->getConnection();
         try {
-            $query = "INSERT INTO orders (userUUID, products)
-                VALUES (:userUUID, :products)";
+            $orderDate = date('Y-m-d');
+
+            $query = "INSERT INTO orders (userUUID, products, orderDate, total)
+                VALUES (:userUUID, :products, :orderDate, :total)";
             $stmt = $connection->prepare($query);
             $stmt->bindParam(":userUUID", $userUUID);
             $stmt->bindParam(":products", $products);
+            $stmt->bindParam(":orderDate", $orderDate);
+            $stmt->bindParam(":total", $total);
             
             return $stmt->execute();
         } catch(Exception $e) {
             $this->logger->LogInfo("Failed to submit order: {$e}");
             exit;   
+        }
+    }
+
+    public function getOrders($userUUID) {
+        $connection = $this->getConnection();
+        try {
+            $query = "SELECT * FROM orders
+                        WHERE userUUID=:userUUID";
+            $stmt = $connection->prepare($query);
+            $stmt->bindParam(":userUUID", $userUUID);
+            $stmt->execute();
+   
+            $results = $stmt->fetchAll();
+            
+            return $results;
+        } catch(Exception $e) {
+            $this->logger->LogInfo("Failed to retrieve order(s): {$e}");
+            exit;
         }
     }
 }
